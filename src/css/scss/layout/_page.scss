@@ -1,0 +1,182 @@
+.slides-page {
+    padding: 0;
+    @include tablet {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+        max-width: none;
+        background: $bg_color;
+    }
+}
+
+.pages-container {
+    position: relative;
+    @include tablet {
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &_background {
+        background-image: url(#{$img}/main-bg.svg);
+        background-position: 0 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 500vh;
+        z-index: -1;
+        pointer-events: none;
+        transition: .7s $easing transform;
+
+        &[data-slide="1"] {
+            @include tablet {
+                transform: translateY(-20%);
+            }
+        }
+        &[data-slide="2"] {
+            @include tablet {
+                transform: translateY(-40%);
+            }
+        }
+        &[data-slide="3"] {
+            @include tablet {
+                transform: translateY(-60%);
+            }
+        }
+        &[data-slide="4"] {
+            @include tablet {
+                transform: translateY(-80%);
+            }
+        }
+    }
+}
+
+.page {
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding: 16px;
+    @include tablet {
+        padding: 0 0 0 120px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        transition: .6s $easing transform;
+        transform:  translateY(-100%) translateZ(0);
+    }
+    @include desktop {
+        padding: 0 0 0 180px;
+    }
+
+    &.active {
+        @include tablet {
+            transform: translateY(0);
+            z-index: 1;
+            transform-origin: center 100%;
+        }
+    }
+    &.active ~ & {
+        @include tablet {
+            transform: translateY(100%);
+        }
+    }
+
+    &_content {
+        margin: auto;
+        @include tablet {
+            width: 94%;
+        }
+        @include desktop {
+            width: 1168px;
+        }
+    }
+    &_columns {
+        padding: 16px;
+        @include tablet {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+            width: 100%;
+            @include tablet {
+                width: 65%;
+                margin-right: -70px;
+            }
+            @include desktop {
+                max-height: 80vh;
+                margin-right: auto;
+            }
+        }
+    }
+    &_column {
+        @include tablet {
+            width: 50%;
+        }
+
+        &__small {
+            position: relative;
+            padding: 0 0 5px;
+            margin: 0 0 20px;
+            @include tablet {
+                padding: 0;
+                margin: 0;
+                width: 37%;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                width: 54px;
+                height: 1px;
+                background: $color;
+            }
+        }
+        &__big {
+            @include tablet {
+                width: 100%;
+            }
+            @include desktop {
+                width: 60%;
+            }
+        }
+    }
+    &_column-text {
+        @include tablet {
+            width: 77%;
+        }
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+        @include tablet {
+            text-align: left;
+        }
+        @include desktop {
+            white-space: nowrap;
+        }
+    }
+    h1 {
+        margin-bottom: 5px;
+    }
+    h2 {
+        margin-bottom: 30px;
+        @include desktop {
+            margin-bottom: 60px;
+        }
+    }
+}

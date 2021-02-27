@@ -1,0 +1,57 @@
+%heading-1 {
+    font-size: 50px;
+    line-height: .85;
+    font-weight: normal;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    @include tablet {
+        font-size: 75px;
+        margin-bottom: 5px;
+    }
+    @include desktop {
+        font-size: 90px;
+    }
+}
+%heading-2 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    @include tablet {
+        line-height: 43px;
+        font-size: 32px;
+    }
+    @include desktop {
+        font-size: 36px;
+    }
+}
+%heading-3 {
+    font-size: 25px;
+    line-height: .85;
+    font-weight: normal;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    @include tablet {
+        font-size: 32px;
+        margin-top: 60px;
+        margin-bottom: 15px;
+        color: $cRed;
+    }
+    @include desktop {
+        font-size: 36px;
+    }
+}
+
+h1,
+.heading-1{
+    @extend %heading-1;
+}
+h2,
+.heading-2 {
+    @extend %heading-2;
+}
+h3,
+.heading-3 {
+    @extend %heading-3;
+}

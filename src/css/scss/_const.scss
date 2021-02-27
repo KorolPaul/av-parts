@@ -1,0 +1,21 @@
+$img: "src/img";
+
+$bg_color: #F2F2F2;
+
+$color: #313235;
+$cRed: #F93F20;
+$cLight: #F8F8F8;
+
+$font-family: 'HelveticaNeueCyr', Helvetica, sans-serif;
+
+$font-size: 25px;
+$font-size__small: 20px;
+
+$max-width: 1452px;
+$indent: 40px;
+
+// easings
+$easeOutCirc: cubic-bezier(.07, .82, .17, 1);
+$easeInOutCirc: cubic-bezier(.78, .13, .15, .86);
+$easeInCirc: cubic-bezier(.6, .04, .98, .34);
+$easing: $easeInOutCirc;

@@ -1,0 +1,20 @@
+textarea {
+    @include placeholder-color($color);
+    color: $color;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $color;
+    box-sizing: border-box;
+    font: 300 15px $font-family;
+    font-size: 20px;
+    padding: 5px 0;
+    width: 100%;
+    resize: none;
+    height: 100px;
+    transition: .2s ease-in border-color, .2s ease-in color;
+
+    &:focus,
+    &.focus {
+        color: $color;
+    }
+}

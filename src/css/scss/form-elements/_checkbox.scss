@@ -1,0 +1,44 @@
+input[type="checkbox"] {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+
+    & + label:not([class]) {
+        cursor: pointer;
+        display: block;
+        padding: 0 0 0 36px;
+        min-height: 20px;
+        position: relative;
+        margin: 0;
+
+        &::before {
+            content: '';
+            box-sizing: border-box;
+            border: 2px solid $cRed;
+            border-radius: 5px;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 2px;
+            left: 0;
+            transition: .1s ease-in-out background;
+        }
+        &::after {
+            content: '\2714';
+            font-weight: bold;
+            font-size: 24px;
+            color: $cRed;
+            position: absolute;
+            top: -6px;
+            left: 4px;
+            opacity: 0;
+            transition: .1s $easing opacity;
+        }
+    }
+    &:checked + label::after {
+        opacity: 1;
+    }
+    &:checked + label:hover::after {
+        opacity: .6;
+    }
+}
