@@ -1,0 +1,39 @@
+.cart {
+    display: flex;
+    align-items: center;
+
+    &_icon {
+        display: inline-block;
+        background: url(#{$img}/cart.svg) no-repeat left bottom 2px;
+        height: 40px;
+        width: 52px;
+        position: relative;
+    }
+    &_count {
+        color: #fff;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 18px;
+        height: 18px;
+        min-width: 18px;
+        border-radius: 9px;
+        background: $cRed;
+        position: absolute;
+        top: 0;
+        right: 12px;
+        text-align: center;
+    }
+    &_title {
+        color: #8F8F8F;
+        display: block;
+        margin: 0 0 6px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    &_value {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        color: $color;
+    }
+}

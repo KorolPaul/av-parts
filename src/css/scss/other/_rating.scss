@@ -1,0 +1,33 @@
+.rating {
+    &_title {
+        color: rgba(255, 255, 255, 0.7);
+    }
+    &_status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_stars {
+        display: flex;
+    }
+    &_star {
+        width: 14px;
+        height: 13px;
+        background: url(#{$img}/star.svg) no-repeat center / contain;
+        margin: 0 2px;
+        opacity: .5;
+        transition: .2s ease opacity;
+
+        &.active,
+        &:hover {
+            opacity: 1;
+        }
+    }
+    &_status-value {
+        color: #fff;
+    }
+    &_title {
+        font-size: 12px;
+        text-decoration: underline;
+    }
+}

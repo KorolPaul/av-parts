@@ -1,7 +1,129 @@
 .footer {
-    @include tablet {
+    background: #1d1d1d;
+
+    &_holder {
+        @include layout;
+        padding: 45px 15px 18px;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    &_info {
+        text-align: center;
+        margin: 0 0 36px;
+        @include tablet {
+            text-align: left;
+            max-width: 306px;
+            margin: 0;
+        }
+    }
+    &_info-logo {
+        color: #fff;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 35px;
+        display: block;
+        margin: 0 0 8px;
+    }
+    &_info-text {
+        color: rgba(#fff, 0.5);
+        margin: 0 0 12px;
+    }
+    &_info-bottom {
         display: flex;
-        align-items: flex-start;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        text-align: left;
+    }
+    &_info-payment-icon {
+        width: 74px;
+        margin: 0 4px 0 0;
+    }
+    &_menu {
+        @include tablet {
+            display: flex;
+            width: 70%;
+        }
+    }
+    &_menu-column {
+        @include tablet {
+            width: 33.3%;
+        }
+    }
+    &_menu-title {
+        display: block;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        color: #fff;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(#fff, .1);
+        text-transform: uppercase;
+        background: url(#{$img}/chevron-down.svg) no-repeat center right / 12px 7px;
+        @include tablet {
+            padding: 0;
+            margin: 0 0 20px;
+            border-bottom: none;
+            background: none;
+        }
+    }
+    &_menu-list {
+        padding: 12px 0;
+        display: none;
+        @include tablet {
+            padding: 0%;
+            display: block;
+        }
+
+        &.active {
+            display: block;
+        }
+    }
+    &_menu-link {
+        display: block;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(#fff, .7);
+        margin: 0 0 18px;
+
+        &:hover {
+            color: $cRed;
+        }
+    }
+    &_menu-big-link {
+        display: block;
+        font-size: 16px;
+        line-height: 18px;
+        color: #fff;
+        margin: 0 0 15px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: $cRed;
+        }
+    }
+    &_menu-icon-wrapper {
+        background: rgba(#fff, .1);
+        height: 45px;
+        width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 10px 0 0;
+        flex-shrink: 0;
+    }
+    &_copyrights {
+        width: 245px;
+        text-align: center;
+        border-top: 1px solid rgba(#fff, 0.1);
+        color: rgba(#fff, 0.5);
+        margin: auto;
+        padding: 16px 0 0;
+        @include tablet {
+            width: 100%;
+            margin: 70px 0 0;
+        }
     }
 }

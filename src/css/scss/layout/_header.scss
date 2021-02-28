@@ -1,25 +1,78 @@
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 54px;
-    @include tablet {
-        position: relative;
+    
+    &_top {
+        @include layout;
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_top-content {
+        display: flex;
+        align-items: center;
         justify-content: flex-end;
     }
-
-    .slides-page & {
-        position: absolute;
-        top: 45px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 2;
+    &_logo-image {
+        width: 132px;
         @include tablet {
-            top: 68px;
-            width: 90%;
+            width: 190px;
         }
-        @include desktop {
-            width: $max-width;
+    }
+    &_column {
+        display: none;
+        @include tablet {
+            display: block;
+            padding: 0 16px;
+            border-left: 1px solid $cGrey;
         }
+
+        &:first-child {
+            border-left: none;
+        }
+    }
+    &_info {
+        padding: 0 0 0 42px;
+        position: relative;
+    }
+    &_info-icon {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &__clock {
+            background-image: url(#{$img}/clock.svg);
+            width: 30px;
+            height: 30px;
+        }
+        &__phone {
+            background-image: url(#{$img}/phone.svg);
+            width: 24px;
+            height: 24px;
+            top: 8px;
+        }
+    }
+    &_info-title {
+        color: #8F8F8F;
+        display: block;
+        margin: 0 0 6px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+    &_info-value {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        color: $color;
+    }
+    &_navigation {
+        box-shadow: inset 0px 4px 20px rgba(0, 0, 0, .1);
+    }
+    &_navigation-content {
+        @include layout;
+        display: flex;
+        align-items: stretch;
     }
 }

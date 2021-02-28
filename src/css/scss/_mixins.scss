@@ -34,9 +34,6 @@
 }
 
 @mixin layout {
-    padding-left: $layout_indent;
-    padding-right: $layout_indent;
-    box-sizing: border-box;
     @include tablet {
         max-width: $max-width;
         margin-left: auto;

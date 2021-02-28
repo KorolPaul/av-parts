@@ -1,0 +1,32 @@
+.quick-search {
+    color: #fff;
+    background: url(#{$img}/header.jpg) no-repeat center / cover;
+    padding: 54px 64px;
+
+    &_holder {
+        @include layout;
+    }
+    &_title {
+        font-weight: bold;
+        font-size: 36px;
+        line-height: 41px;
+        text-align: center;
+        margin: 0 0 10px;
+        display: block;
+    }
+    &_subtitle {
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        display: block;
+        margin: 0 0 36px;
+    }
+    &_filters {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_filters-item {
+        margin: 0 16px;
+    }
+}

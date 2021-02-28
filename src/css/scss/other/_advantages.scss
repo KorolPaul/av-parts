@@ -1,0 +1,35 @@
+.advantages {
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding: 42px 0 18px;
+    }
+
+
+    &_item {
+        display: flex;
+        margin: 0 0 28px;
+        max-width: 80%;
+    }
+    &_item-icon-wrapper {
+        width: 118px;
+        flex-shrink: 0;
+    }
+    &_item-icon {
+
+    }
+    &_item-title {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 16px;
+        color: $color;
+    }
+    &_item-value {
+        color: #8F8F8F;
+        display: block;
+        margin: 0 0 6px;
+        font-size: 16px;
+        line-height: 18px;
+    }
+}

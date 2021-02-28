@@ -1,19 +1,18 @@
 .menu {
-    margin: 0 0 42px;
-    @include tablet {
-        width: 25%;
-        order: 3;
-    }
+    position: relative;
 
-    &_link {
-        color: #fff;
-        font-size: 23px;
-        display: block;
-        margin: 0 0 15px;
-        text-align: center;
-        @include tablet {
-            color: $color;
-            text-align: left;
-        }
+    &_toggle {
+        background: $cRed url(#{$img}/burger.svg) no-repeat center right 22px;
+        width: 351px;
+        height: 70px;
+        line-height: 70px;
+        padding: 0 50px 0 24px;
+        text-align: left;
+    }
+    &_list {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 70px;
     }
 }

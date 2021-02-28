@@ -1,0 +1,7 @@
+.grey-section {
+    background: rgba(242, 242, 242, 0.5);
+
+    &_holder {
+        @include layout;
+    }
+}

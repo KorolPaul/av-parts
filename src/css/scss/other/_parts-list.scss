@@ -1,0 +1,75 @@
+.parts-list {
+    background: #fff;
+    padding: 40px 52px 26px;
+    margin: 0 -52px 0;
+
+    &_holder {
+        @include layout;
+    }
+    &_title {
+        display: block;
+        margin: 0 0 45px;
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 34px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    &_columns {
+        @include tablet {
+            display: flex;
+        }
+    }
+    &_column {
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 33.3%;
+        }
+    }
+
+    &_item {
+        margin: 0 0 24px;
+        padding: 0 0 0 80px;
+        position: relative;
+    }
+    &_item-icon {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &_item-title {
+        display: block;
+        margin: 0 0 5px;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 28px;
+        color: $color;
+
+        &:hover {
+            color: $cRed;
+        }
+    }
+    &_item-link {
+        display: block;
+        font-size: 18px;
+        line-height: 35px;
+        color: $color;
+
+        &:hover {
+            color: $cRed;
+        }
+    }
+    &_item-value {
+        position: relative;
+    }
+    &_item-count {
+        position: absolute;
+        top: -16px;
+        right: -32px;
+        font-size: 14px;
+        line-height: 24px;
+        color: #999;
+    }
+}
