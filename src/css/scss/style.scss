@@ -26,6 +26,7 @@
 @import  "layout/page";
 @import  "layout/popup";
 @import  "layout/grey-section";
+@import  "layout/menu-toggle";
 
 /* other */
 @import  "other/account";
@@ -38,3 +39,6 @@
 @import  "other/parts-list";
 @import  "other/features";
 @import  "other/rating";
+
+/* plugins */
+@import  "plugins/choises";

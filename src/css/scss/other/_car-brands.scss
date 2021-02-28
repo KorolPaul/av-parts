@@ -13,7 +13,9 @@
         text-align: center;
     }
     &_columns {
-        columns: 6;
+        @include tablet {
+            columns: 6;
+        }
     }
     &_letter {
         position: relative;

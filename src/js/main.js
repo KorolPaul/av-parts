@@ -11,9 +11,21 @@ popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     togglePopup();
 }))
 
+/* catalog menu */
+const menuElement = document.querySelector('.menu');
+const menuToggleElement = document.querySelector('.menu_toggle');
+if (menuToggleElement) {
+    menuToggleElement.addEventListener('click', function(e) {
+        e.preventDefault();
+        menuElement.classList.toggle('active');
+    })
+}
 
 /* footer menu */
 const footerTitles = document.querySelectorAll('.footer_menu-title');
 footerTitles.forEach(el => el.addEventListener('click', function(e) {
     e.target.nextElementSibling.classList.toggle('active');
 }))
+
+/* SELECT CUSTOMIZATION */
+document.querySelectorAll('select').forEach(el => { new Choices(el, { searchEnabled: true, })})

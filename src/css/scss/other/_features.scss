@@ -1,13 +1,21 @@
 .features {
-    padding: 24px 0;
+    padding: 24px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
     @include tablet {
-        display: flex;
         gap: 38px;
+        flex-wrap: nowrap;
+        padding: 24px 0;
     }
 
     &_item {
+        width: calc(50% - 15px);
         display: flex;
         align-items: flex-start;
+        @include tablet {
+            width: auto;
+        }
     }
     &_icon {
         margin: 0 20px 0 0;

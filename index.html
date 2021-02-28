@@ -18,8 +18,9 @@
 <body>
     <header class="header">
         <div class="header_top">
+            <button class="menu-toggle"></button>
             <a class="header_logo" href="/">
-                <img src="src/img/logo.svg" alt="" class="header_logo-image">
+                Av-parts.by
             </a>
             <div class="header_top-content">
                 <form action="" class="search">
@@ -47,18 +48,16 @@
                         </a>
                     </div>
                 </div>
-                <div class="header_column">
+                <div class="header_column header_column__mobile">
                     <a href="#" class="cart">
                         <div class="cart_icon">
                             <span class="cart_count">12</span>
                         </div>
-                        <div>
+                        <div class="cart_text">
                             <span class="cart_title">Корзина</span>
                             <span class="cart_value">12 590 р.</span>
                         </div>
                     </a>
-                </div>
-                <div class="header_column">
                 </div>
             </div>
         </div>
@@ -67,7 +66,72 @@
                 <nav class="menu">
                     <button class="menu_toggle">Каталог товаров</button>
                     <ul class="menu_list">
-
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/amortisation.svg" alt="" class="menu_list-icon">
+                                Амортизаторы
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/bolts.svg" alt="" class="menu_list-icon">
+                                Болты и гайки
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/sensors.svg" alt="" class="menu_list-icon">
+                                Датчики
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/doors.svg" alt="" class="menu_list-icon">
+                                Двери и составляющие
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/engene.svg" alt="" class="menu_list-icon">
+                                Двигатель
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/body-parts.svg" alt="" class="menu_list-icon">
+                                Детали кузова
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/cooling.svg" alt="" class="menu_list-icon">
+                                Кондиционер
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/transmission.svg" alt="" class="menu_list-icon">
+                                КПП
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/lights.svg" alt="" class="menu_list-icon">
+                                Оптика автомобильная
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/cooling.svg" alt="" class="menu_list-icon">
+                                Охлаждение
+                            </a>
+                        </li>
+                        <li class="menu_list-item">
+                            <a href="#" class="menu_list-link">
+                                <img src="src/img/categories/other.svg" alt="" class="menu_list-icon">
+                                Показать еще
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <div class="main-menu">
@@ -849,6 +913,7 @@
         </div>
     </footer>
 
+    <script src="./src/js/choises.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 </html>

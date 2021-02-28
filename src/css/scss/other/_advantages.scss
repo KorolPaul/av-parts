@@ -1,23 +1,24 @@
 .advantages {
+    padding: 42px 20px 18px;
     @include tablet {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        padding: 42px 0 18px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
 
     &_item {
         display: flex;
         margin: 0 0 28px;
-        max-width: 80%;
+        @include tablet {
+            max-width: 80%;
+        }
     }
     &_item-icon-wrapper {
         width: 118px;
         flex-shrink: 0;
-    }
-    &_item-icon {
-
     }
     &_item-title {
         font-weight: bold;

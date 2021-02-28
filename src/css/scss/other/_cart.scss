@@ -9,6 +9,12 @@
         width: 52px;
         position: relative;
     }
+    &_text {
+        display: none;
+        @include tablet {
+            display: block;
+        }
+    }
     &_count {
         color: #fff;
         font-weight: bold;
@@ -35,5 +41,6 @@
         font-size: 16px;
         line-height: 16px;
         color: $color;
+        white-space: nowrap;
     }
 }

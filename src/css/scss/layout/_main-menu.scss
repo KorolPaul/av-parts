@@ -1,7 +1,10 @@
 .main-menu {
-    display: flex;
-    align-items: stretch;
-    margin: 0 0 0 35px;
+    display: none;
+    @include tablet {
+        display: flex;
+        align-items: stretch;
+        margin: 0 0 0 35px;
+    }
 
     &_link {
         color: $color;

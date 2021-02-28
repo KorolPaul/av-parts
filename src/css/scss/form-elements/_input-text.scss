@@ -5,14 +5,14 @@ input[type="email"],
 input[type="url"],
 input[type="tel"] {
     @include placeholder-color($color);
-    color: $color;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $color;
+    color: $cLight;
+    background: #fff;
+    border: 1px solid #E5E5E5;
     box-sizing: border-box;
-    font: 300 15px $font-family;
-    font-size: 20px;
-    padding: 5px 0;
+    font: 300 16px $font-family;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
     width: 100%;
     transition: .2s ease-in border-color, .2s ease-in color;
 

@@ -1,7 +1,10 @@
 .parts-list {
     background: #fff;
-    padding: 40px 52px 26px;
-    margin: 0 -52px 0;
+    padding: 40px 20px 26px;
+    @include tablet {
+        padding: 40px 52px 26px;
+        margin: 0 -52px 0;
+    }
 
     &_holder {
         @include layout;
