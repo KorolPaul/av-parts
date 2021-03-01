@@ -11,7 +11,7 @@
     }
     &_text {
         display: none;
-        @include tablet {
+        @include desktop {
             display: block;
         }
     }

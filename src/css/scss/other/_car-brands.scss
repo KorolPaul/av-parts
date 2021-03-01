@@ -14,6 +14,9 @@
     }
     &_columns {
         @include tablet {
+            columns: 3;
+        }
+        @include desktop {
             columns: 6;
         }
     }

@@ -18,7 +18,7 @@ if (menuToggleElement) {
     menuToggleElement.addEventListener('click', function(e) {
         e.preventDefault();
         menuElement.classList.toggle('active');
-    })
+    });
 }
 
 /* footer menu */
@@ -28,4 +28,13 @@ footerTitles.forEach(el => el.addEventListener('click', function(e) {
 }))
 
 /* SELECT CUSTOMIZATION */
-document.querySelectorAll('select').forEach(el => { new Choices(el, { searchEnabled: true, })})
+document.querySelectorAll('select').forEach(el => { new Choices(el, { searchEnabled: true, })});
+
+/* parts list dropdown */
+const partsListCategories = document.querySelectorAll('.parts-list_item-title');
+if (partsListCategories.length) {
+    partsListCategories.forEach(el => { el.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.target.parentElement.classList.toggle('active');
+    }) })
+}

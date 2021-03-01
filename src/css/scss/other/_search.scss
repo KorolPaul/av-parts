@@ -9,14 +9,23 @@
         height: 45px;
         line-height: 45px;
         flex-grow: 1;
-        width: 370px;
+        width: 260px;
+        @include desktop {
+            width: 370px;
+        }
     }
     &_button[type] {
         height: 45px;
         line-height: 45px;
-        background: $color url(#{$img}/search.svg) no-repeat center right 12px / 17px 17px;
+        background: $color url(#{$img}/search.svg) no-repeat center center / 17px 17px;
         text-align: left;
         padding: 0 10px;
-        width: 116px;
+        width: 45px;
+        font-size: 0;
+        @include desktop {
+            background-position: center right 12px;
+            font-size: 18px;
+            width: 116px;
+        }
     }
 }

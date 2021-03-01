@@ -9,10 +9,10 @@
     white-space: nowrap;
 }
 @mixin tablet() {
-    @media all and (min-width: 769px) { @content; }
+    @media all and (min-width: 768px) { @content; }
 }
 @mixin desktop() {
-    @media all and (min-width: 1367px) { @content; }
+    @media all and (min-width: 1024px) { @content; }
 }
 @mixin media($resolution) {
     @media all and (min-width: $resolution) { @content; }

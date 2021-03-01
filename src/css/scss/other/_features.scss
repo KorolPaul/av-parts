@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    @include tablet {
+    @include desktop {
         gap: 38px;
         flex-wrap: nowrap;
         padding: 24px 0;

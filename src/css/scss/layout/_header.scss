@@ -21,14 +21,18 @@
         @include tablet {
             font-size: 35px;
             line-height: 35px;
+            margin: 0 18px;
+        }
+        @include desktop {
+            margin: 0;
         }
     }
     &_column {
         display: none;
-        @include tablet {
+        padding: 0 16px;
+        border-left: 1px solid $cGrey;
+        @include desktop {
             display: block;
-            padding: 0 16px;
-            border-left: 1px solid $cGrey;
         }
 
         &:first-of-type {
@@ -37,6 +41,11 @@
 
         &__mobile {
             display: block;
+        }
+        &__tablet {
+            @include tablet {
+                display: block;
+            }
         }
     }
     &_info {

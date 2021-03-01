@@ -3,5 +3,11 @@
 
     &_holder {
         @include layout;
+        @include tablet {
+            padding: 0 40px;
+        }
+        @include desktop {
+            padding: 0;
+        }
     }
 }

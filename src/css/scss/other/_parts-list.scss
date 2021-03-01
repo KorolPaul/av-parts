@@ -2,8 +2,10 @@
     background: #fff;
     padding: 40px 20px 26px;
     @include tablet {
+        padding: 40px 38px 26px;
+    }
+    @include desktop {
         padding: 40px 52px 26px;
-        margin: 0 -52px 0;
     }
 
     &_holder {
@@ -19,28 +21,35 @@
         text-align: center;
     }
     &_columns {
-        @include tablet {
+        @include desktop {
             display: flex;
         }
     }
     &_column {
-        @include tablet {
-            width: 50%;
-        }
         @include desktop {
             width: 33.3%;
         }
     }
 
     &_item {
-        margin: 0 0 24px;
-        padding: 0 0 0 80px;
+        padding: 0 0 0 38px;
         position: relative;
+        border-bottom: 1px solid $bg_color;
+        @include desktop {
+            margin: 0 0 24px;
+            padding-left: 80px;
+            border: none;
+        }
     }
     &_item-icon {
         position: absolute;
         left: 0;
-        top: 0;
+        top: 14px;
+        width: 28px;
+        @include desktop {
+            width: 46px;
+            top: 0;
+        }
     }
     &_item-title {
         display: block;
@@ -48,10 +57,37 @@
         font-weight: bold;
         font-size: 18px;
         line-height: 28px;
+        padding: 14px 0;
         color: $color;
+        background: url(#{$img}/chevron-down.svg) no-repeat center right / 15px 9px;
+        @include desktop {
+            background: transparent;
+            padding: 0;
+        }
 
         &:hover {
             color: $cRed;
+        }
+
+        .parts-list_item.active & {
+            border: none;
+            background-image: url(#{$img}/chevron-up.svg);
+        }
+    }
+    &_item-list {
+        display: none;
+        padding: 0 0 14px;
+        @include desktop {
+            display: block;
+            padding: 0;
+        }
+
+        .parts-list_item.active & {
+            display: flex;
+            flex-wrap: wrap;
+            @include desktop {
+                display: block;
+            }
         }
     }
     &_item-link {
@@ -59,6 +95,12 @@
         font-size: 18px;
         line-height: 35px;
         color: $color;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 100%;
+        }
 
         &:hover {
             color: $cRed;

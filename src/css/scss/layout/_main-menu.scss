@@ -1,6 +1,6 @@
 .main-menu {
     display: none;
-    @include tablet {
+    @include desktop {
         display: flex;
         align-items: stretch;
         margin: 0 0 0 35px;

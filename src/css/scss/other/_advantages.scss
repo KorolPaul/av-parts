@@ -3,9 +3,12 @@
     @include tablet {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         padding-left: 0;
         padding-right: 0;
+    }
+    @include desktop {
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
 
@@ -13,12 +16,24 @@
         display: flex;
         margin: 0 0 28px;
         @include tablet {
+            max-width: 90%;
+        }
+        @include desktop {
             max-width: 80%;
         }
     }
     &_item-icon-wrapper {
-        width: 118px;
+        width: 80px;
         flex-shrink: 0;
+        @include desktop {
+            width: 118px;
+        }
+    }
+    &_item-icon {
+        width: 60px;
+        @include desktop {
+            width: 80px;
+        }
     }
     &_item-title {
         font-weight: bold;
