@@ -30,7 +30,9 @@
     &_column {
         display: none;
         padding: 0 16px;
-        border-left: 1px solid $cGrey;
+        @include tablet {
+            border-left: 1px solid $cGrey;
+        }
         @include desktop {
             display: block;
         }

@@ -1,8 +1,11 @@
 .old-price {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 21px;
     text-align: center;
     color: rgba(143, 143, 143, 0.5);
     text-decoration: line-through;
     margin: 0 10px 0 0;
+    @include tablet {
+        font-size: 18px;
+    }
 }

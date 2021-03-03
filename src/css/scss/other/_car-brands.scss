@@ -11,6 +11,11 @@
             padding-right: 52px;
         }
     }
+    &__compact {
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0;
+    }
 
     &_title {
         display: block;
@@ -20,6 +25,27 @@
         line-height: 34px;
         text-transform: uppercase;
         text-align: center;
+
+        .car-brands__compact & {
+            display: block;
+            background: #EDEDED;
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            margin: 0;
+        }
+    }
+    &_title-icon {
+        display: inline-block;
+        width: 7px;
+        height: 4px;
+        background: url(#{$img}/chevron-down.svg) no-repeat center / 7px 4px;
+        margin: -6px 0 0 8px;
+        line-height: 40px;
+
+        @include desktop {
+            display: none;
+        }
     }
     &_columns {
         @include tablet {
@@ -30,6 +56,14 @@
         }
         @include desktop-large {
             columns: 6;
+        }
+
+        .car-brands__compact & {
+            display: none;
+        }
+        .car-brands__compact &.active {
+            display: block;
+            padding: 20px 0 0;
         }
     }
     &_letter {

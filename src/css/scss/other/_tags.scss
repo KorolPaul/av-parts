@@ -1,4 +1,8 @@
 .tags {
+    display: none;
+    @include tablet {
+        display: block;
+    }
 
     &_clean {
         display: inline-block;

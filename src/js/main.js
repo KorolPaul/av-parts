@@ -44,4 +44,11 @@ if (partsListCategories.length) {
 document.querySelectorAll('.add-to-cart').forEach(el => el.addEventListener('click', function(e) {
     e.preventDefault();
     e.target.classList.toggle('active');
-}))
+}));
+
+/* car brands */
+document.querySelectorAll('.car-brands__compact .car-brands_title').forEach(el => el.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.target.nextElementSibling.classList.toggle('active');
+}));
+

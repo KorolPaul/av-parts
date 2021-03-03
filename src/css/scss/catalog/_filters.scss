@@ -1,6 +1,10 @@
 .filters {
+    display: none;
     background: $cLight;
     padding: 2px 20px;
+    @include tablet {
+        display: block;
+    }
 
     &_title {
         font-weight: bold;
