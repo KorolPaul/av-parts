@@ -1,0 +1,66 @@
+.filters {
+    background: $cLight;
+    padding: 2px 20px;
+
+    &_title {
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 20px;
+        display: block;
+        margin: 2px -18px;
+        height: 72px;
+        line-height: 72px;
+        padding: 0 20px;
+        background: #fff url(#{$img}/filter.svg) no-repeat center right 16px / 25px 25px;
+    }
+    &_section {
+        margin: 0 0 26px;
+    }
+    &_section-title {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        margin: 12px 0 14px;
+        display: block;
+    }
+    &_item {
+        margin: 0 0 16px
+    }
+    &_section-columns {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_section-column {
+        width: 42%;
+    }
+    &_more {
+        color: $cRed;
+        background: url(#{$img}/chevron-down-orange.svg) no-repeat right 60%;
+        padding: 0 20px 0 0;
+        height: auto;
+        width: auto;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 24px;
+    }
+    &_found {
+        display: block;
+        height: 57px;
+        line-height: 56px;
+        font-size: 18px;
+        margin: 0 -18px;
+        padding: 0 60px 0 20px;
+        background: #fff;
+        position: relative;
+    }
+    &_found-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 54px;
+        background: #EDEDED url(#{$img}/close.svg) no-repeat center / 20px 20px;
+    }
+}

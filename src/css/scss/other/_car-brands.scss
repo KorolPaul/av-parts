@@ -1,7 +1,16 @@
 .car-brands {
     background: #fff;
-    padding: 40px 52px 26px;
-    margin: 0 -52px 62px;
+    padding: 40px 20px 26px;
+    margin: 0 0 62px;
+
+    &__wide {
+        @include desktop {
+            margin-left: -52px;
+            margin-right: -52px;
+            padding-left: 52px;
+            padding-right: 52px;
+        }
+    }
 
     &_title {
         display: block;
@@ -17,6 +26,9 @@
             columns: 3;
         }
         @include desktop {
+            columns: 5;
+        }
+        @include desktop-large {
             columns: 6;
         }
     }

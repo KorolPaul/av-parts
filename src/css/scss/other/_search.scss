@@ -11,7 +11,8 @@
         flex-grow: 1;
         width: 260px;
         @include desktop {
-            width: 370px;
+            width: 15vw;
+            max-width: 370px;
         }
     }
     &_button[type] {

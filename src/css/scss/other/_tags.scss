@@ -1,0 +1,45 @@
+.tags {
+
+    &_clean {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 14px;
+        border: 1px solid #f8f8f8;
+        box-sizing: border-box;
+        border-radius: 3px;
+        padding: 0 36px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 3px;
+        position: relative;
+        background: #EDEDED;
+        color: $cRed;
+        width: auto;
+    }
+}
+
+.tag {
+    display: inline-block;
+    font-size: 14px;
+    border: 1px solid #f8f8f8;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 0 26px 0 10px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    position: relative;
+    background: #EDEDED;
+    margin: 0 16px 0 0;
+
+    &_close {
+        background: url(#{$img}/close.svg) no-repeat center center / 8px 8px;
+        position: absolute;
+        height: 40px;
+        width: 28px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0;
+    }
+}

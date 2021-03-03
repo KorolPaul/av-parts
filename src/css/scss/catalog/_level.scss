@@ -1,0 +1,10 @@
+.level {
+    color: $color;
+
+    &__budget {
+        color: $cBlue;
+    }
+    &__premium {
+        color: $cYellow;
+    }
+}

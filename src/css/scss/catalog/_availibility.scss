@@ -1,0 +1,11 @@
+.availibility {
+    font-weight: 500;
+    padding: 0 0 0 26px;
+    color: $cGreen;
+    background: url(#{$img}/check-green.svg) no-repeat left center;
+
+    &__order {
+        background-image: url(#{$img}/clock-orange.svg);
+        color: $cYellow;
+    }
+}

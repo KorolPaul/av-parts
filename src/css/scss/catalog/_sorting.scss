@@ -1,0 +1,12 @@
+.sorting {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &_title {
+        font-size: 18px;
+        line-height: 25px;
+        color: rgba(143, 143, 143, 0.5);
+        margin: 0 16px 0 0;
+    }
+}

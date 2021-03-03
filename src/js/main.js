@@ -38,3 +38,10 @@ if (partsListCategories.length) {
         e.target.parentElement.classList.toggle('active');
     }) })
 }
+
+
+/* add to cart */
+document.querySelectorAll('.add-to-cart').forEach(el => el.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.target.classList.toggle('active');
+}))

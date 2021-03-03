@@ -1,0 +1,36 @@
+.badge {
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 0 18px 0 30px;
+    height: 26px;
+    line-height: 26px;
+    display: inline-block;
+    position: relative;
+    background: #bebebe url(#{$img}/star.svg) no-repeat 6px center / 16px auto;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 100%;
+        border-style: solid;
+        border-width: 13px 7px 13px 0px;
+        border-color: transparent #bebebe transparent transparent;
+    }
+
+    &__premium {
+        background-color: $cYellow;
+
+        &::before {
+            border-right-color: $cYellow;
+        }
+    }
+    &__budget {
+        background-color: $cBlue;
+
+        &::before {
+            border-right-color: $cBlue;
+        }
+    }
+}

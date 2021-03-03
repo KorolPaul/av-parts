@@ -27,6 +27,8 @@
 @import  "layout/popup";
 @import  "layout/grey-section";
 @import  "layout/menu-toggle";
+@import  "layout/breadcrumbs";
+@import  "layout/pages";
 
 /* other */
 @import  "other/account";
@@ -38,7 +40,21 @@
 @import  "other/car-brands";
 @import  "other/parts-list";
 @import  "other/features";
-@import  "other/rating";
+@import  "other/tags";
+@import  "other/flag";
+
+/* catalog */
+@import  "catalog/card";
+@import  "catalog/sorting";
+@import  "catalog/filters";
+@import  "catalog/rating";
+@import  "catalog/count";
+@import  "catalog/level";
+@import  "catalog/old-price";
+@import  "catalog/price";
+@import  "catalog/add-to-cart";
+@import  "catalog/availibility";
+@import  "catalog/badge";
 
 /* plugins */
 @import  "plugins/choises";

@@ -1,0 +1,15 @@
+.add-to-cart {
+    width: 140px;
+    padding: 0 30px 0 10px;
+    text-align: left;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 3px;
+    background: $cRed url(#{$img}/cart-light.svg) no-repeat right 12px center / 22px auto;
+
+    &.active {
+        background-color: $cGreen;
+        background-image: url(#{$img}/cart-added.svg);
+        background-position-y: 40%;
+    }
+}
