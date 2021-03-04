@@ -1,0 +1,22 @@
+.filters-toggle {
+    background: $cRed url(#{$img}/filter-light.svg) no-repeat center / 24px auto;
+    width: 40px;
+    padding: 0;
+    font-size: 0;
+    @include tablet {
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 20px;
+        width: auto;
+        background: #fff url(#{$img}/filter.svg) no-repeat center right 12px / 24px auto;
+        border: 3px solid #f8f8f8;
+        color: $color;
+        padding: 0 60px 0 20px;
+        flex-grow: 1;
+        order: 1;
+    }
+    @include desktop {
+        display: none;
+        order: inherit;
+    }
+}

@@ -2,8 +2,23 @@
     display: none;
     background: $cLight;
     padding: 2px 20px;
-    @include tablet {
+    box-sizing: border-box;
+    @include desktop {
         display: block;
+    }
+
+    &.active {
+        display: block;
+        position: fixed;
+        max-height: 95vh;
+        width: 98vw;
+        overflow: auto;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        @include desktop {
+            position: static;
+        }
     }
 
     &_title {
@@ -15,20 +30,68 @@
         height: 72px;
         line-height: 72px;
         padding: 0 20px;
-        background: #fff url(#{$img}/filter.svg) no-repeat center right 16px / 25px 25px;
+        background: #fff url(#{$img}/close.svg) no-repeat center right 16px / 12px 12px;
+        @include desktop {
+            background-image: url(#{$img}/filter.svg);
+            background-position: center right 16px;
+            background-size: 25px 25px;
+        }
     }
     &_section {
         margin: 0 0 26px;
     }
     &_section-title {
         font-weight: bold;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 24px;
-        margin: 12px 0 14px;
+        margin: 12px 0 9px;
         display: block;
+        position: relative;
+        background: url(#{$img}/chevron-down.svg) no-repeat center right / 12px auto;
+        @include desktop {
+            font-size: 18px;
+            margin-bottom: 14px;
+            background-image: none;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            right: -20px;
+            bottom: -13px;
+            height: 1px;
+            background:  rgba(196, 196, 196, .5);
+            @include desktop {
+                display: none;
+            }
+        }
+
+        .active > & {
+            background-image: url(#{$img}/chevron-up-orange.svg);
+            color: $cRed;
+            @include desktop {
+                background-image: none;
+                color: $color;
+            }
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+    &_section-content {
+        display: none;
+        @include desktop {
+            display: block;
+        }
+
+        .active > & {
+            display: block;
+        }
     }
     &_item {
-        margin: 0 0 16px
+        margin: 0 0 16px;
     }
     &_section-columns {
         display: flex;
@@ -51,20 +114,43 @@
     }
     &_found {
         display: block;
-        height: 57px;
-        line-height: 56px;
-        font-size: 18px;
+        font-size: 14px;
+        line-height: 16px;
         margin: 0 -18px;
-        padding: 0 60px 0 20px;
+        padding: 12px 15px 22px;
         background: #fff;
         position: relative;
+        box-shadow: 0px 4px 20px rgba(#000, .1);
+        text-align: center;
+        color: #8F8F8F;
+        @include desktop {
+            text-align: left;
+            font-size: 18px;
+            padding: 0 60px 0 20px;
+            color: $color;
+            height: 57px;
+            line-height: 56px;
+        }
     }
     &_found-close {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        width: 54px;
-        background: #EDEDED url(#{$img}/close.svg) no-repeat center / 20px 20px;
+        display: none;
+        @include tablet {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 54px;
+            background: #EDEDED url(#{$img}/close.svg) no-repeat center / 20px 20px;
+        }
+    }
+    &_found-buttons {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 12px 0 0;
+        @include desktop {
+            display: none;
+        }
     }
 }

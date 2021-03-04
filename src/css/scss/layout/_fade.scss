@@ -1,0 +1,17 @@
+.fade {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(#000, 0.65);
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s ease opacity;
+
+    &.active {
+        opacity: 1;
+        pointer-events: inherit;
+    }
+}

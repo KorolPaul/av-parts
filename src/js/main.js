@@ -52,3 +52,24 @@ document.querySelectorAll('.car-brands__compact .car-brands_title').forEach(el =
     e.target.nextElementSibling.classList.toggle('active');
 }));
 
+const fadeElement = document.querySelector('.fade');
+/* toggle mobile filters */
+const filtersElement = document.querySelector('.filters');
+function toggleFilters() {
+    filtersElement.classList.toggle('active');
+    fadeElement.classList.toggle('active');
+}
+
+document.querySelector('.filters-toggle').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    if (filtersElement) {
+        toggleFilters();
+    }
+});
+document.querySelector('.filters_title').addEventListener('click', function () {
+    toggleFilters();
+});
+document.querySelectorAll('.filters_section-title').forEach(el => el.addEventListener('click', function (e) {
+    e.target.parentElement.classList.toggle('active');
+}));

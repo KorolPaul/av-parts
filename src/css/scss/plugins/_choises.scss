@@ -1,8 +1,11 @@
 .choices {
     position: relative;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     font-size: 16px;
     color: $color;
+    @include tablet {
+        margin-bottom: 24px;
+    }
 }
 .choices:focus {
     outline: 0;
@@ -68,7 +71,7 @@
     top: 0;
     pointer-events: none;
     background: url(#{$img}/chevron-down.svg) no-repeat center;
-    border: 1px solid #E5E5E5;
+    border-left: 1px solid #E5E5E5;
     box-sizing: border-box;
     border-radius: 0px 3px 3px 0px;
 

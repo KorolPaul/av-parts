@@ -97,6 +97,7 @@
         @include tablet {
             order: inherit;
             margin: 12px 0 32px;
+            text-align: right;
         }
     }
     &_button {

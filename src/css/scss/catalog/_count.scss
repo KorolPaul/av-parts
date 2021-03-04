@@ -2,8 +2,11 @@
     position: absolute;
     left: 102%;
     top: -14px;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 24px;
     color: #999999;
     white-space: nowrap;
+    @include tablet {
+        font-size: 14px;
+    }
 }
