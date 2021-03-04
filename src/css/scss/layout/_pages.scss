@@ -4,7 +4,7 @@
     word-spacing: 0;
     text-align: center;
     @include desktop {
-        text-align: l;
+        text-align: left;
     }
 
     &_link {

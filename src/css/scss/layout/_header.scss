@@ -12,6 +12,70 @@
         align-items: center;
         justify-content: flex-end;
     }
+    &_additional-content {
+        display: none;
+        position: fixed;
+        box-sizing: border-box;
+        left: 0;
+        top: 0;
+        background: #fff;
+        z-index: 3;
+        flex-direction: column;
+        padding: 28px 15px 0;
+        overflow: auto;
+        max-height: 100vh;
+        border-radius: 0 0 6px 0;
+        width: 95vw;
+        max-width: 370px;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            position: static;
+            padding: 0;
+            max-width: none;
+            width: auto;
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+    &_additional-content-logo {
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: bold;
+        display: block;
+        margin: 0 0 25px;
+        position: relative;
+        @include desktop {
+            display: none;
+        }
+    }
+    &_additional-content-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 36px;
+        padding: 0;
+        background: url(#{$img}/close.svg) no-repeat center / 12px 12px;
+
+    }
+    &_mobile-menu {
+        @include desktop {
+            display: none;
+        }
+    }
+    &_mobile-menu-link {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+        color: $color;
+        margin: 30px 0;
+    }
     &_logo {
         color: $color;
         font-weight: bold;
@@ -28,13 +92,14 @@
         }
     }
     &_column {
-        display: none;
-        padding: 0 16px;
+        
+
         @include tablet {
             border-left: 1px solid $cGrey;
         }
         @include desktop {
-            display: block;
+            padding: 0 16px;
+            margin: 0;
         }
 
         &:first-of-type {
@@ -51,16 +116,27 @@
         }
     }
     &_info {
-        padding: 0 0 0 42px;
+        background: $cLight;
+        margin: 0 -15px;
+        padding: 10px 15px 10px 57px;
         position: relative;
+        @include desktop {
+            background-color: transparent;
+            margin: 0;
+            padding: 0 0 0 42px;
+        }
     }
     &_info-icon {
         position: absolute;
-        top: 5px;
-        left: 0;
+        top: 15px;
+        left: 15px;
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;
+        @include desktop {
+            top: 5px;
+            left: 0;
+        }
 
         &__clock {
             background-image: url(#{$img}/clock.svg);
@@ -71,7 +147,10 @@
             background-image: url(#{$img}/phone.svg);
             width: 24px;
             height: 24px;
-            top: 8px;
+            top: 18px;
+            @include desktop {
+                top: 8px;
+            }
         }
     }
     &_info-title {

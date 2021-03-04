@@ -1,9 +1,6 @@
 .search {
-    display: none;
-    @include tablet {
-        display: flex;
-        margin: 0 15px 0 0;
-    }
+    display: flex;
+    margin: 0 15px 0 0;
 
     &_input[type] {
         height: 45px;

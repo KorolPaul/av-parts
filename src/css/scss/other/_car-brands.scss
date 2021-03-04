@@ -31,18 +31,30 @@
             background: #EDEDED;
             font-size: 14px;
             height: 40px;
-            line-height: 40px;
+            line-height: 1;
             margin: 0;
+            @include tablet {
+                background: transparent;
+                font-weight: bold;
+                font-size: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
     }
     &_title-icon {
         display: inline-block;
         width: 7px;
         height: 4px;
-        background: url(#{$img}/chevron-down.svg) no-repeat center / 7px 4px;
+        background: url(#{$img}/chevron-down.svg) no-repeat center / 100% 100%;
         margin: -6px 0 0 8px;
         line-height: 40px;
-
+        @include tablet {
+            width: 12px;
+            height: 7px;
+            margin: 0;
+        }
         @include desktop {
             display: none;
         }
@@ -60,10 +72,18 @@
 
         .car-brands__compact & {
             display: none;
+            @include desktop {
+                display: block;
+                padding-top: 40px;
+
+            }
         }
         .car-brands__compact &.active {
             display: block;
             padding: 20px 0 0;
+            @include desktop {
+                padding-top: 40px;
+            }
         }
     }
     &_letter {

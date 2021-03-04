@@ -1,3 +1,5 @@
+const fadeElement = document.querySelector('.fade');
+
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle')
 const popupElement = document.querySelector('.popup');
@@ -9,15 +11,32 @@ function togglePopup() {
 popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     e.preventDefault();
     togglePopup();
-}))
+}));
 
 /* catalog menu */
-const menuElement = document.querySelector('.menu');
-const menuToggleElement = document.querySelector('.menu_toggle');
+const menuToggleElement = document.querySelector('.menu-toggle');
+const additionalContentElement = document.querySelector('.header_additional-content');
+const additionalContentCloseElement = document.querySelector('.header_additional-content-close');
+
+function toggleMainmenu(e) {
+    e.preventDefault();
+    fadeElement.classList.toggle('active');
+    additionalContentElement.classList.toggle('active');
+}
+
 if (menuToggleElement) {
-    menuToggleElement.addEventListener('click', function(e) {
+    menuToggleElement.addEventListener('click', toggleMainmenu);
+    additionalContentCloseElement.addEventListener('click', toggleMainmenu);
+}
+
+/* catalog menu */
+const catalogMenuElement = document.querySelector('.menu');
+const catalogMenuToggleElement = document.querySelector('.menu_toggle');
+if (catalogMenuToggleElement) {
+    catalogMenuToggleElement.addEventListener('click', function(e) {
         e.preventDefault();
-        menuElement.classList.toggle('active');
+        fadeElement.classList.toggle('active');
+        catalogMenuElement.classList.toggle('active');
     });
 }
 
@@ -52,7 +71,6 @@ document.querySelectorAll('.car-brands__compact .car-brands_title').forEach(el =
     e.target.nextElementSibling.classList.toggle('active');
 }));
 
-const fadeElement = document.querySelector('.fade');
 /* toggle mobile filters */
 const filtersElement = document.querySelector('.filters');
 function toggleFilters() {
