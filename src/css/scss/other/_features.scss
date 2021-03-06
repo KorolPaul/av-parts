@@ -1,25 +1,40 @@
 .features {
     padding: 24px 15px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
     @include desktop {
         gap: 38px;
         flex-wrap: nowrap;
         padding: 24px 0;
     }
 
+    &__vertical {
+        display: block;
+        padding-bottom: 0;
+    }
+
     &_item {
-        width: calc(50% - 15px);
         display: flex;
         align-items: flex-start;
         @include tablet {
             width: auto;
         }
+
+        .features__vertical & {
+            margin: 0 0 45px;
+
+            &:last-child {
+                margin: 0 0 20px;
+            }
+        }
     }
     &_icon {
         margin: 0 20px 0 0;
         flex-shrink: 0;
+        width: 60px;
     }
     &_title {
         display: block;

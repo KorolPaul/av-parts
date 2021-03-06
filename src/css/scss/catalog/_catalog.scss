@@ -1,0 +1,11 @@
+.catalog {
+    &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &_title {
+        @extend %heading-1;
+        margin: 0;
+    }
+}

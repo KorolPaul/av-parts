@@ -43,8 +43,12 @@
 @import  "other/features";
 @import  "other/tags";
 @import  "other/flag";
+@import  "other/gallery";
+@import  "other/info";
+@import  "other/table-wrapper";
 
 /* catalog */
+@import  "catalog/catalog";
 @import  "catalog/card";
 @import  "catalog/sorting";
 @import  "catalog/filters";
@@ -57,6 +61,8 @@
 @import  "catalog/availibility";
 @import  "catalog/badge";
 @import  "catalog/filters-toggle";
+@import  "catalog/good";
+@import  "catalog/compatibility";
 
 /* plugins */
 @import  "plugins/choises";

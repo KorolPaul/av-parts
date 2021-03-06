@@ -1,11 +1,27 @@
 .price {
     font-weight: 500;
     font-size: 22px;
-    line-height: 22px;
+    line-height: 1;
     white-space: nowrap;
 
+    &__medium {
+        font-size: 35px;
+        font-weight: bold;
+        margin: 6px 0 0;
+    }
+    &__big {
+        font-size: 45px;
+        font-weight: bold;
+    }
     &_fractional {
         font-size: 12px;
-        line-height: 12px;
+        line-height: 1;
+
+        .price__medium & {
+            font-size: 20px;
+        }
+        .price__big & {
+            font-size: 24px;
+        }
     }
 }

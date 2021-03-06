@@ -1,5 +1,9 @@
 const fadeElement = document.querySelector('.fade');
 
+fadeElement.addEventListener('click', function() {
+    document.querySelectorAll('.active').forEach(el => el.classList.remove('active'));
+})
+
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle')
 const popupElement = document.querySelector('.popup');

@@ -1,0 +1,55 @@
+.compatibility {
+    padding: 50px 0;
+    @include tablet {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    &_title {
+        @extend %heading-1;
+        text-align: center;
+        display: block;
+    }
+    &_content {
+        background: #fff;
+        padding: 30px 12px;
+        @include tablet {
+            padding: 30px 32px;
+        }
+    }
+    &_model {
+        display: block;
+        white-space: nowrap;
+        
+        & + & {
+            margin-top: 12px;
+        }
+    }
+
+    table {
+        th {
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1;
+            padding: 6px 0;
+            @include tablet {
+                font-size: 25px;
+            }
+
+            &:first-child {
+                text-align: left;
+            }
+        }
+
+        td {
+            font-size: 18px;
+            line-height: 24px;
+            padding: 22px 0 18px;
+            vertical-align: top;
+            border-bottom: 1px solid #EBEBEB;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+    }
+}

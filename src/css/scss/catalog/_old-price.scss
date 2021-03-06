@@ -8,4 +8,9 @@
     @include tablet {
         font-size: 18px;
     }
+
+    &_fractional {
+        font-size: 12px;
+        line-height: 1;
+    }
 }
