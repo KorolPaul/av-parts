@@ -38,8 +38,9 @@
             width: auto;
         }
 
-        &.active {
+        &.opened {
             display: flex;
+            z-index: 11;
         }
     }
     &_additional-content-logo {

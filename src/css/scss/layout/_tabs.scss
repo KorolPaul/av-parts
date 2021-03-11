@@ -1,0 +1,40 @@
+.tabs {
+    &_header {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid $bg_color;
+        }
+    }
+    &_button {
+        color: $cRed;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1;
+        padding: 13px 20px;
+        min-width: 210px;
+        background: transparent;
+        border-bottom: 1px solid $bg_color;
+        transition: .2s ease border;
+
+        &:hover,
+        &.active {
+            border-color: $cRed;
+        }
+    }
+    &_content {
+        padding: 15px 0;
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

@@ -1,6 +1,6 @@
 .fade {
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     left: 0;
     top: 0;
     bottom: 0;
@@ -10,8 +10,14 @@
     pointer-events: none;
     transition: .2s ease opacity;
 
-    &.active {
+    &.opened {
         opacity: 1;
         pointer-events: inherit;
+    }
+
+    &__mobile {
+        @include desktop {
+            display: none;
+        }
     }
 }

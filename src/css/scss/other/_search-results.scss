@@ -1,0 +1,21 @@
+.search-results {
+    &_categories {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    &_categories-item {
+        padding: 7px 0 7px 15px;
+        background: url(#{$img}/chevron-right.svg) no-repeat -8px 5px;
+    }
+    &_categories-name {
+        color: $color;
+        margin: 0 10px 0 0;
+    }
+    &_categories-count {
+        color: $color;
+        font-size: 11px;
+        line-height: 18px;
+        color: #8F8F8F;
+    }
+}

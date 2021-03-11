@@ -7,7 +7,7 @@
         display: block;
     }
 
-    &.active {
+    &.opened {
         display: block;
         position: fixed;
         max-height: 95vh;
@@ -15,7 +15,7 @@
         overflow: auto;
         top: 0;
         left: 0;
-        z-index: 3;
+        z-index: 11;
         @include desktop {
             position: static;
         }

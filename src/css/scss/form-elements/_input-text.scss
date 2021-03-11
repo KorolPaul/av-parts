@@ -5,7 +5,7 @@ input[type="email"],
 input[type="url"],
 input[type="tel"] {
     @include placeholder-color($color);
-    color: $cLight;
+    color: $color;
     background: #fff;
     border: 1px solid #E5E5E5;
     box-sizing: border-box;

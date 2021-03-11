@@ -29,7 +29,7 @@
                         <button class="header_additional-content-close"></button>
                     </span>
                     <form action="" class="search">
-                        <input class="search_input" type="search" placeholder="Поиск по артиклу, названию">
+                        <input class="search_input js-header-search" type="search" placeholder="Поиск по артиклу, названию">
                         <input class="search_button" type="submit" value="Поиск">
                     </form>
                     <div class="header_mobile-menu">
@@ -167,6 +167,82 @@
                     <a href="#" class="main-menu_link">Преимущества</a>
                     <a href="#" class="main-menu_link">Контакты</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="search-popup">
+            <form action="" class="search search__wide">
+                <input class="search_input js-search-input" type="search" placeholder="Автозапчасть Тормозной диск MAXGEAR 19-06">
+            </form>
+            <div class="tabs">
+                <div class="tabs_header">
+                    <button data-tab-link="1" class="tabs_button active">В каталоге</button>
+                    <button data-tab-link="2" class="tabs_button">По вин-номеру</button>
+                </div>
+                <div class="tabs_content active" data-tab="1">
+                    <div class="search-results">
+                        <ul class="search-results_categories">
+                            <li class="search-results_categories-item">
+                                <a href="#" class="search-results_categories-name">Главный цилиндр сцепления</a>
+                                <span class="search-results_categories-count">1202 товара</span>
+                            </li>
+                            <li class="search-results_categories-item">
+                                <a href="#" class="search-results_categories-name">Рабочий цилиндр сцепления </a>
+                                <span class="search-results_categories-count">1202 товара</span>
+                            </li>
+                            <li class="search-results_categories-item">
+                                <a href="#" class="search-results_categories-name">Натяжной ролик генераторая</a>
+                                <span class="search-results_categories-count">1202 товара</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="card_left">
+                                <a href="#"><img src="src/img/good.jpg" alt="" class="card_image card_image__small"></a>
+                                <div class="card_data">
+                                    <a href="#" class="card_title js-search-container">MAXGEAR 0693</a>
+                                    <span class="card_subtitle">Тормозной диск </span>
+                                </div>
+                            </div>
+                            <div class="card_controls">
+                                <div class="card_price">
+                                    <span class="price">
+                                        500<span class="price_fractional">.99</span> руб
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card_left">
+                                <a href="#"><img src="src/img/good.jpg" alt="" class="card_image card_image__small"></a>
+                                <div class="card_data">
+                                    <a href="#" class="card_title js-search-container">MAXGEAR 19-0693</a>
+                                    <span class="card_subtitle">Тормозной диск </span>
+                                </div>
+                            </div>
+                            <div class="card_controls">
+                                <div class="card_price">
+                                    <span class="price">
+                                        500<span class="price_fractional">.99</span> руб
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs_content" data-tab="2">
+                    <div class="search-results">
+                        <ul class="search-results_categories">
+                            <li class="search-results_categories-item">
+                                <a href="#" class="search-results_categories-name">Главный цилиндр сцепления</a>
+                                <span class="search-results_categories-count">1202 товара</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </header>
@@ -945,6 +1021,7 @@
     </footer>
 
     <div class="fade"></div>
+    <div class="fade fade__mobile"></div>
 
 
     <script src="./src/js/choises.js"></script>
