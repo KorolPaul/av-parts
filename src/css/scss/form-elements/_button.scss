@@ -41,3 +41,16 @@ input[type="submit"] {
     background: #fff;
     color: $color;
 }
+
+.light-button {
+    border: 1px solid $cRed;
+    background: #fff;
+    color: $cRed;
+    transition: .2s $easing color,
+                .2s $easing background;
+
+    &:hover {
+        color: $cLight;
+        background-color: $cRed;
+    }
+}

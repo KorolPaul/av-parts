@@ -3,11 +3,17 @@
     padding: 0 15px;
     margin-bottom: 50px;
     @include tablet {
-        display: flex;
         margin-bottom: 100px;
     }
     @include desktop {
+        display: flex;
         padding: 0;
+    }
+
+    &__wide {
+        @include desktop {
+            display: block;
+        }
     }
 
     &_sidebar {

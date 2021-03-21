@@ -1,0 +1,40 @@
+.more-button {
+    margin: 30px auto 0;
+    border: 1px solid #E5E5E5;
+    background-color: #fff;
+    color: $cRed;
+    transition: .2s $easing border;
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    @include tablet {
+        min-width: 480px;
+    }
+
+    &:hover {
+        border-color: $cRed;
+    }
+
+    &_icon {
+        display: inline-block;
+        background: url(#{$img}/refresh.svg) no-repeat center center / 25px 25px;
+        height: 25px;
+        width: 25px;
+        margin: 0 10px 0 0;
+        vertical-align: -6px;
+
+        .more-button.active & {
+            animation: 1s linear rotation infinite;
+        }
+    }
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

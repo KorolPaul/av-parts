@@ -8,6 +8,11 @@
         padding: 40px 52px 26px;
     }
 
+    &__no-indent {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     &_holder {
         @include layout;
     }
@@ -81,11 +86,7 @@
         }
 
         .parts-list_item.active & {
-            display: flex;
-            flex-wrap: wrap;
-            @include desktop {
-                display: block;
-            }
+            display: block;
         }
     }
     &_item-link {

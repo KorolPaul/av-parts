@@ -7,6 +7,12 @@
         text-align: left;
     }
 
+    &__center {
+        @include desktop {
+            text-align: center;
+        }
+    }
+
     &_link {
         display: inline-block;
         border: 1px solid #E5E5E5;

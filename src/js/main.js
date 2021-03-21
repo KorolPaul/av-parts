@@ -5,8 +5,12 @@ function closeAllOpened() {
     document.querySelectorAll('.opened').forEach(el => el.classList.remove('opened'));
 }
 
-fadeElement.addEventListener('click', closeAllOpened);
-fadeMobileElement.addEventListener('click', closeAllOpened);
+if (fadeElement) {
+    fadeElement.addEventListener('click', closeAllOpened);
+}
+if (fadeMobileElement) {
+    fadeMobileElement.addEventListener('click', closeAllOpened);
+}
 
 /* Popup */
 const popupToggleElements = document.querySelectorAll('.js-popup-toggle')
@@ -134,20 +138,22 @@ if (tabsButtons.length) {
 }
 
 /* Search */
-const headerSerachInput = document.querySelector('.js-header-search');
+const headerSearchInput = document.querySelector('.js-header-search');
 const searchPopup = document.querySelector('.search-popup');
 
 const searchInput = document.querySelector('.js-search-input');
 const searchContainers = document.querySelectorAll('.js-search-container');
 
-headerSerachInput.addEventListener('input', function(e) {
-    const value = e.target.value;
+if (headerSearchInput) {
+    headerSearchInput.addEventListener('input', function(e) {
+        const value = e.target.value;
 
-    searchPopup.classList.toggle('opened');
-    fadeElement.classList.toggle('opened');
-    searchInput.value = value;
-    searchInput.focus();
-});
+        searchPopup.classList.toggle('opened');
+        fadeElement.classList.toggle('opened');
+        searchInput.value = value;
+        searchInput.focus();
+    });
+}
 
 if (searchInput) {
     function highlightSerachResuts(e) {
@@ -168,4 +174,16 @@ if (searchInput) {
     } 
 
     searchInput.addEventListener('input', highlightSerachResuts);
+}
+
+/* load more */
+const loadMoreButton = document.querySelector('.more-button');
+if (loadMoreButton) {
+    loadMoreButton.addEventListener('click', function(e) {
+        e.target.classList.add('active');
+
+        setTimeout(() => {
+            e.target.classList.remove('active');
+        }, 1000);
+    });
 }
