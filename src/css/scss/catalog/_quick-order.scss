@@ -1,0 +1,18 @@
+.quick-order {
+    &_title {
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 1;
+        display: block;
+        margin: 0 0 12px;
+    }
+    &_row {
+        margin: 0 0 16px;
+
+        &__big-indent {
+            @include desktop {
+                margin-bottom: 40px;
+            }
+        }
+    }
+}

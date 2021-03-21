@@ -187,3 +187,22 @@ if (loadMoreButton) {
         }, 1000);
     });
 }
+
+/* input numbers */
+const inputNumberMinusElements = document.querySelectorAll('.js-input-number-minus');
+const inputNumberPLusElements = document.querySelectorAll('.js-input-number-plus');
+
+if (inputNumberMinusElements.length) {
+    function decerease(e) {
+        e.target.nextElementSibling.value = Number(e.target.nextElementSibling.value) - 1;
+    }
+
+    inputNumberMinusElements.forEach(el => el.addEventListener('click', decerease));
+}
+if (inputNumberPLusElements.length) {
+    function incerease(e) {
+        e.target.previousElementSibling.value = Number(e.target.previousElementSibling.value) + 1;
+    }
+
+    inputNumberPLusElements.forEach(el => el.addEventListener('click', incerease));
+}

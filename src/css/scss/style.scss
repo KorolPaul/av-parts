@@ -15,6 +15,7 @@
 @import  "form-elements/textarea";
 @import  "form-elements/checkbox";
 @import  "form-elements/label";
+@import  "form-elements/input-number";
 
 /*layout*/
 @import  "layout/headings";
@@ -69,6 +70,8 @@
 @import  "catalog/filters-toggle";
 @import  "catalog/good";
 @import  "catalog/compatibility";
+@import  "catalog/cart-table";
+@import  "catalog/quick-order";
 
 /* plugins */
 @import  "plugins/choises";

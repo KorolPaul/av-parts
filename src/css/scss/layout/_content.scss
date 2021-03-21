@@ -16,6 +16,13 @@
         }
     }
 
+    & + & {
+        margin-top: -50px;
+        @include tablet {
+            margin-top: -100px;
+        }
+    }
+
     &_sidebar {
         @include desktop {
             width: $sidebar-width;

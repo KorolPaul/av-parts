@@ -43,9 +43,12 @@ input[type="submit"] {
 }
 
 .light-button {
+    @include button;
+    display: inline-block;
     border: 1px solid $cRed;
     background: #fff;
     color: $cRed;
+    width: auto;
     transition: .2s $easing color,
                 .2s $easing background;
 
