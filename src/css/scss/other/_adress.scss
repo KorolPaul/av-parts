@@ -1,0 +1,61 @@
+.adress {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: normal;
+    margin: 15px 0 0;
+    @include tablet {
+        font-size: 20px;
+    }
+    
+    &_item  {
+        display: block;
+        margin: 0 0 6px;
+        @include tablet {
+            display: inline-block;
+            margin: 0;
+        }
+    }
+    &_property {
+        color: #8F8F8F;
+        margin: 0 5px 0 0;
+    }
+    &_value {
+        @include tablet {
+            margin: 0 40px 0 0;
+        }
+    }
+    &_controls {
+        margin: 12px 0 0;
+        @include tablet {
+            margin-top: 20px;
+        }
+    }
+    &_control {
+        background: transparent;
+        padding: 0;
+        width: auto;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 499;
+        color: #8F8F8F;
+        height: 18px;
+        line-height: 18px;
+        transition: .2s $easing opacity;
+        @include tablet {
+            font-size: 16px;
+        }
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
+        }
+
+        & + & {
+            padding: 0 0 0 25px;
+            margin: 0 0 0 25px;
+            border-left: 1px solid #8F8F8F;
+        }
+    }
+}

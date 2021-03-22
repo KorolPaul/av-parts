@@ -1,0 +1,35 @@
+.add-button {
+    padding: 0;
+    margin: 0 0 0 44px;
+    background: transparent;
+    color: $color;
+    height: auto;
+    border-bottom: 1px solid currentColor;
+    font-size: 22px;
+    line-height: 1;
+    width: auto;
+    position: relative;
+    transition: .2s $easing opacity;
+
+    &:hover {
+        opacity: .6;
+    }
+    &:active {
+        opacity: .8;
+    }
+
+    &_icon {
+        display: inline-block;
+        padding: 0;
+        height: 26px;
+        width: 26px;
+        line-height: 28px;
+        background-color: $cRed;
+        font-weight: normal;
+        color: $cLight;
+        border-radius: 50%;
+        position: absolute;
+        top: -2px;
+        left: -44px;
+    }
+}

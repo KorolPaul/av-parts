@@ -2,7 +2,8 @@
     
     &_top {
         @include layout;
-        padding: 20px 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;

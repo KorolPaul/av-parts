@@ -1,13 +1,11 @@
 .content {
     @include layout;
-    padding: 0 15px;
     margin-bottom: 50px;
     @include tablet {
         margin-bottom: 100px;
     }
     @include desktop {
         display: flex;
-        padding: 0;
     }
 
     &__wide {

@@ -206,3 +206,22 @@ if (inputNumberPLusElements.length) {
 
     inputNumberPLusElements.forEach(el => el.addEventListener('click', incerease));
 }
+
+/* Tabs in form */
+const formTabsButtons = document.querySelectorAll('.form_tabs-button');
+const formTabsBlocks = document.querySelectorAll('.form_tabs-content');
+
+if (formTabsButtons.length) {
+    function switchTab(e) {
+        e.preventDefault();
+
+        const index = e.target.dataset.tabLink;
+        formTabsButtons.forEach(el => el.classList.remove('active'));
+        formTabsBlocks.forEach(el => el.classList.remove('active'));
+
+        formTabsButtons[index - 1].classList.add('active');
+        formTabsBlocks[index - 1].classList.add('active');
+    }
+
+    formTabsButtons.forEach(el => el.addEventListener('click', switchTab));
+}

@@ -10,7 +10,7 @@ input[type="checkbox"] {
         min-height: 20px;
         position: relative;
         margin: 0;
-        transition: .2 ease color;
+        transition: .2s $easing color;
 
         &::before {
             content: '';

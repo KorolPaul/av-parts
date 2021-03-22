@@ -14,8 +14,11 @@
 @import  "form-elements/input-text";
 @import  "form-elements/textarea";
 @import  "form-elements/checkbox";
+@import  "form-elements/radio";
 @import  "form-elements/label";
 @import  "form-elements/input-number";
+@import  "form-elements/form";
+@import  "form-elements/add-button";
 
 /*layout*/
 @import  "layout/headings";
@@ -53,6 +56,7 @@
 @import  "other/search-results";
 @import  "other/marker";
 @import  "other/more-button";
+@import  "other/adress";
 
 /* catalog */
 @import  "catalog/catalog";
@@ -72,6 +76,7 @@
 @import  "catalog/compatibility";
 @import  "catalog/cart-table";
 @import  "catalog/quick-order";
+@import  "catalog/checkout";
 
 /* plugins */
 @import  "plugins/choises";

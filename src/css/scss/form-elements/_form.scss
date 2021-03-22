@@ -1,0 +1,42 @@
+.form {
+    &_row {
+        display: flex;
+        @include tablet {
+            gap: 30px;
+        }
+    }
+    &_cell {
+        margin: 0 0 20px;
+        @include tablet {
+            margin-bottom: 30px;
+            flex-grow: 1;
+            width: 50%;
+        }
+    }
+    &_tabs-buttons {
+        display: flex;
+        gap: 20px;
+        margin: 0 0 20px;
+        @include tablet {
+            margin-bottom: 30px;
+        }
+    }
+    &_tabs-button {
+        background: #fff;
+        color: $cRed;
+        border: 1px solid $cRed;
+
+        &:hover,
+        &.active {
+            background-color: $cRed;
+            color: $cLight;
+        }
+    }
+    &_tabs-content {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+}

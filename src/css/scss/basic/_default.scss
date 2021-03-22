@@ -52,3 +52,24 @@ sup {
     position: relative;
     top: -20px;
 }
+
+fieldset {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #F2F2F2;
+    padding: 0 0 8px;
+    margin: 0 0 30px;
+    @include tablet {
+        margin-bottom: 36px;
+    }
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 18px;
+    @include tablet {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+}
