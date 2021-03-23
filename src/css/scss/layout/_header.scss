@@ -2,11 +2,14 @@
     
     &_top {
         @include layout;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding: 20px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include desktop {
+            padding-left: $indent;
+            padding-right: $indent;
+        }
     }
     &_top-content {
         display: flex;
@@ -176,5 +179,11 @@
         @include layout;
         display: flex;
         align-items: stretch;
+        padding-left: 0;
+        padding-right: 0;
+        @include desktop {
+            padding-left: $indent;
+            padding-right: $indent;
+        }
     }
 }

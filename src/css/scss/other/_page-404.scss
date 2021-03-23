@@ -1,0 +1,68 @@
+.page-404 {
+    text-align: center;
+    margin: auto;
+    max-width: 400px;
+    @include tablet {
+        max-width: 600px;
+    }
+
+    &_title {
+        display: inline-block;
+        font-size: 119px;
+        margin: 20px 0 30px;
+        position: relative;
+        color: $cRed;
+        letter-spacing: 0.185em;
+        @include tablet {
+            font-size: 255px;
+            margin: 0;
+        }
+        
+        &::after {
+            content: '404';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            color: $color;
+            z-index: -1;
+            @include tablet {
+                left: 10px;
+                top: 10px;
+            }
+        }
+        &::before {
+            content: '';
+            background: url(#{$img}/404.png) no-repeat top center / contain;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            left: -20px;
+            bottom: -20px;
+            z-index: -2;
+            @include tablet {
+                top: -20px;
+                right: -90px;
+                left: -90px;
+                bottom: -50px;
+            }
+        }
+    }
+    &_subtitle {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 0 12px;
+        @include tablet {
+            font-size: 30px;
+            margin: 0 0 20px;
+        }
+    }
+    &_reload {
+        display: block;
+        font-size: 14px;
+        margin: 0 0 24px;
+        color: #8F8F8F;
+        @include tablet {
+            margin-bottom: 32px;
+        }
+    }
+}
