@@ -20,6 +20,7 @@
     &_model {
         display: block;
         white-space: nowrap;
+        cursor: pointer;
         
         & + & {
             margin-top: 12px;

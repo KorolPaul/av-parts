@@ -18,6 +18,7 @@ const popupElement = document.querySelector('.popup');
 
 function togglePopup() {
     popupElement.classList.toggle('opened');
+    fadeElement.classList.toggle('opened');
 }
 
 popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
@@ -143,6 +144,7 @@ const searchPopup = document.querySelector('.search-popup');
 
 const searchInput = document.querySelector('.js-search-input');
 const searchContainers = document.querySelectorAll('.js-search-container');
+const searchVisibilityContainers = document.querySelectorAll('.js-visibility-container');
 
 if (headerSearchInput) {
     headerSearchInput.addEventListener('input', function(e) {
@@ -171,9 +173,26 @@ if (searchInput) {
                 el.innerHTML = el.innerText;
             }
         });
+        searchVisibilityContainers.forEach(el => {
+            const lowerCasedHTML = el.innerText.toLowerCase();
+            if (value) {
+                if (lowerCasedHTML.includes(lowerCasedValue)) {
+                    el.style.display = 'block';
+                } else {
+                    el.style.display = 'none';
+                }
+            } else {
+                el.style.display = 'block';
+            }
+        });
     } 
 
     searchInput.addEventListener('input', highlightSerachResuts);
+
+    searchInput.addEventListener('input', debounce(function () {
+        // аякс запрос
+        console.log(12111);
+    }, 1000));
 }
 
 /* load more */
@@ -225,3 +244,25 @@ if (formTabsButtons.length) {
 
     formTabsButtons.forEach(el => el.addEventListener('click', switchTab));
 }
+
+function debounce(func, wait, immediate = false) {
+    let timeout;
+
+    return function executedFunction() {
+        const context = this;
+        const args = arguments;
+
+        const later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+
+        const callNow = immediate && !timeout;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(later, wait);
+
+        if (callNow) func.apply(context, args);
+    };
+};

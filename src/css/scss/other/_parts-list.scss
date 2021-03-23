@@ -15,6 +15,11 @@
 
     &_holder {
         @include layout;
+
+        .parts-list__no-indent & {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     &_title {
         display: block;
@@ -29,6 +34,7 @@
         @include desktop {
             display: flex;
             flex-wrap: wrap;
+            gap: 30px;
         }
     }
 
@@ -38,10 +44,14 @@
         position: relative;
         border-bottom: 1px solid $bg_color;
         @include desktop {
-            width: 33.3%;
+            width: calc(50% - 30px);
             margin: 0 0 24px;
             padding-left: 80px;
+            padding-right: 20px;
             border: none;
+        }
+        @include media(1600px) {
+            width: calc(33.3% - 60px);
         }
     }
     &_item-icon {
@@ -92,11 +102,11 @@
     &_item-link {
         display: block;
         font-size: 18px;
-        line-height: 35px;
+        line-height: 1.3;
         color: $color;
         box-sizing: border-box;
-        padding: 0 0 0 28px;
-        background: url(#{$img}/chevron-right.svg) no-repeat left 40%;
+        padding: 0 0 10px 28px;
+        background: url(#{$img}/chevron-right.svg) no-repeat left -1px;
         @include tablet {
             width: 50%;
         }

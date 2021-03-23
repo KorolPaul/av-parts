@@ -548,6 +548,129 @@
                 </div>
             </div>
 
+            <div class="popup js-models-popup">
+                <button class="popup_close js-popup-toggle"></button>
+                <div class="popup_content">
+                    <div class="models-table">
+                        <span class="models-table_title">Audi A4</span>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Модель</th>
+                                    <th>Модификация</th>
+                                    <th>Год выпуска</th>
+                                    <th>ЛС</th>
+                                    <th>кВ</th>
+                                    <th>Двигатель, см3</th>
+                                    <th>Тип кузова</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                                <tr>
+                                    <td>BETTLE (5C1, 5C2)</td>
+                                    <td>1 TSI</td>
+                                    <td>Октябрь 2003 - Сентябрь 2007</td>
+                                    <td>160</td>
+                                    <td>118</td>
+                                    <td>1390</td>
+                                    <td>Наклодная задняя часть</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
             <div class="features">
                 <div class="features_item">
                     <img src="src/img/features/24-7.svg" alt="" class="features_icon" width="50">
@@ -662,5 +785,13 @@
 
     <script src="./src/js/choises.js"></script>
     <script src="./src/js/main.js"></script>
+
+    <script>
+        const modelLinks = document.querySelectorAll('.compatibility_model');
+        modelLinks.forEach(el => el.addEventListener('click', function(e) {
+            document.querySelector('.fade').classList.add('opened');
+            document.querySelector('.js-models-popup').classList.add('opened');
+        }));
+    </script>
 </body>
 </html>
