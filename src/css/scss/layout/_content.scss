@@ -43,4 +43,16 @@
             margin: 0 0 90px;
         }
     }
+    &_columns {
+        @include desktop {
+            display: flex;
+            gap: 30px;
+        }
+    }
+    &_column {
+        @include desktop {
+            flex-grow: 1;
+            width: 50%;
+        }
+    }
 }

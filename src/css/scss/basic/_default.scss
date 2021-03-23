@@ -23,9 +23,9 @@ a {
 }
 
 p {
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     @include tablet {
-        margin-bottom: 30px;
+        margin-bottom: 18px;
     }
 }
 
@@ -43,6 +43,29 @@ textarea {
 
 table {
     min-width: 100%;
+}
+
+ul {
+    padding: 0;
+
+    li {
+        padding: 0 0 0 15px;
+        position: relative;
+        background: url(#{$img}/marker.svg) no-repeat left 6px;
+        list-style: none;
+        margin: 0 0 6px;
+        @include tablet {
+            margin-bottom: 12px;
+        }
+    }
+
+    ul {
+        padding-left: 10px;
+        margin: 6px 0 0;
+        @include tablet {
+            margin-top: 12px;
+        }
+    }
 }
 
 sup {
@@ -71,5 +94,38 @@ legend {
     @include tablet {
         font-size: 25px;
         margin-bottom: 25px;
+    }
+}
+
+blockquote {
+    background-color: $cRed;
+    font-style: italic;
+    margin: 0;
+    padding: 28px 20px;
+    color: $cLight;
+    position: relative;
+    text-align: center;
+    margin: 15px 0 40px;
+    @include tablet {
+        margin-top: 30px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 20px;
+        top: -10px;
+        background: url(#{$img}/quotes-top.svg) no-repeat center center / 100% 100%;
+        width: 46px;
+        height: 33px;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 20px;
+        bottom: -10px;
+        background: url(#{$img}/quotes-bottom.svg) no-repeat center center / 100% 100%;
+        width: 46px;
+        height: 33px;
     }
 }

@@ -22,19 +22,13 @@
     }
 }
 %heading-3 {
-    font-size: 25px;
-    line-height: .85;
-    font-weight: normal;
-    margin: 0 0 20px;
-    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.2;
+    margin: 32px 0 16px;
     @include tablet {
-        font-size: 32px;
-        margin-top: 60px;
-        margin-bottom: 15px;
-        color: $cRed;
-    }
-    @include desktop {
-        font-size: 36px;
+        font-size: 21px;
+        margin-bottom: 12px;
     }
 }
 
