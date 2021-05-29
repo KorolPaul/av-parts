@@ -123,10 +123,11 @@
     }
     &_item-count {
         position: absolute;
-        top: -16px;
-        right: -32px;
+        top: -12px;
+        left: 100%;
         font-size: 14px;
         line-height: 24px;
         color: #999;
+        white-space: nowrap;
     }
 }

@@ -172,18 +172,4 @@
         color: $color;
         white-space: nowrap;
     }
-    &_navigation {
-        box-shadow: inset 0px 4px 20px rgba(0, 0, 0, .1);
-    }
-    &_navigation-content {
-        @include layout;
-        display: flex;
-        align-items: stretch;
-        padding-left: 0;
-        padding-right: 0;
-        @include desktop {
-            padding-left: $indent;
-            padding-right: $indent;
-        }
-    }
 }

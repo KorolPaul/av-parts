@@ -1,0 +1,19 @@
+.navigation {
+    background: #fff;
+    box-shadow: inset 0px 4px 20px rgba(0, 0, 0, .1);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &_content {
+        @include layout;
+        display: flex;
+        align-items: stretch;
+        padding-left: 0;
+        padding-right: 0;
+        @include desktop {
+            padding-left: $indent;
+            padding-right: $indent;
+        }
+    }
+}

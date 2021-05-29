@@ -16,7 +16,10 @@
         @include tablet {
             text-align: left;
             max-width: 306px;
-            margin: 0;
+            margin: 0 0 30px;
+        }
+        @include desktop {
+            margin-bottom: 0;
         }
     }
     &_info-logo {
@@ -43,6 +46,9 @@
     &_menu {
         @include tablet {
             display: flex;
+            width: 100%;
+        }
+        @include desktop {
             width: 70%;
         }
     }
@@ -125,5 +131,12 @@
             width: 100%;
             margin: 70px 0 0;
         }
+    }
+    &_info-bottom {
+        white-space: nowrap;
+    }
+    &_info-payment-methods {
+        margin: 0 14px 0 0;
+        flex-shrink: 0;
     }
 }

@@ -53,7 +53,7 @@ table {
 ul {
     padding: 0;
 
-    li {
+    li:not([class]) {
         padding: 0 0 0 15px;
         position: relative;
         background: url(#{$img}/marker.svg) no-repeat left 6px;
@@ -151,4 +151,8 @@ hr {
     background: #E5E5E5;
     margin: 40px 0;
     border: none;
+}
+
+.sticky-header-page {
+    position: relative;
 }

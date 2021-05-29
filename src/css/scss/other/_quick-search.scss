@@ -42,6 +42,12 @@
         @include desktop {
             margin: 0;
             width: auto;
+            width: calc(25% - 30px);
+        }
+
+        & > input,
+        & > .choices {
+            width: 100%;
         }
     }
     &_submit[type] {
