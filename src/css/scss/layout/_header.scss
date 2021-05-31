@@ -1,5 +1,13 @@
 .header {
-    
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    &.popup-opened {
+        z-index: 11;
+    }
+
     &_top {
         @include layout;
         padding: 20px 0;

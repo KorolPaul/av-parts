@@ -70,7 +70,7 @@ footerTitles.forEach(el => el.addEventListener('click', function(e) {
 }))
 
 /* SELECT CUSTOMIZATION */
-document.querySelectorAll('select').forEach(el => { new Choices(el, { searchEnabled: true, })});
+document.querySelectorAll('select.select').forEach(el => { new Choices(el, { searchEnabled: true, })});
 
 /* parts list dropdown */
 const partsListCategories = document.querySelectorAll('.parts-list_item-title');
@@ -85,7 +85,21 @@ if (partsListCategories.length) {
 /* add to cart */
 document.querySelectorAll('.add-to-cart').forEach(el => el.addEventListener('click', function(e) {
     e.preventDefault();
-    e.target.classList.toggle('active');
+    $.ajax({
+        url: '/cart/add-to-cart',
+        type: 'post',
+        dataType: 'json',
+        data: { productId : e.target.value }
+    })
+        .done(function(response) {
+            if (response.data.success === true) {
+                responseValues = response.data.values;
+                $('span.cart_count').html(responseValues.count);
+                $('span.cart_value').html(responseValues.total);
+                e.target.innerHTML = 'В корзине';
+                e.target.classList.toggle('active');
+            }
+        })
 }));
 
 /* car brands */
@@ -141,20 +155,27 @@ if (tabsButtons.length) {
 /* Search */
 const headerSearchInput = document.querySelector('.js-header-search');
 const searchPopup = document.querySelector('.search-popup');
+const header = document.querySelector('.header');
+const loader = document.querySelector('.loader');
 
 const searchInput = document.querySelector('.js-search-input');
 const searchContainers = document.querySelectorAll('.js-search-container');
 const searchVisibilityContainers = document.querySelectorAll('.js-visibility-container');
 
 if (headerSearchInput) {
-    headerSearchInput.addEventListener('input', function(e) {
+    function onInputChange(e) {
+        console.log(e);
         const value = e.target.value;
 
         searchPopup.classList.toggle('opened');
+        header.classList.toggle('popup-opened');
         fadeElement.classList.toggle('opened');
         searchInput.value = value;
         searchInput.focus();
-    });
+    }
+
+    headerSearchInput.addEventListener('input', onInputChange);
+    headerSearchInput.addEventListener('paste', onInputChange);
 }
 
 if (searchInput) {
@@ -189,9 +210,104 @@ if (searchInput) {
 
     searchInput.addEventListener('input', highlightSerachResuts);
 
-    searchInput.addEventListener('input', debounce(function () {
+    searchInput.addEventListener('input', debounce(function (e) {
         // аякс запрос
-        console.log(12111);
+        const value = e.target.value;
+
+        /*************** start *******************/
+        content = '';
+        loader.classList.add('active');
+
+        $.ajax({
+            url: '/car-ajax/search-article',
+            type: 'post',
+            dataType: 'json',
+            data: { article : value }
+        })
+            .done(function(response) {
+                loader.classList.remove('active');
+                if (response.data.success === true) {
+                    responseValues = response.data.values;
+
+                    for (let key in responseValues) {
+                        content +=
+                            '<div class="card">'+
+                                '<div class="card_left">'+
+                                    '<a href="'+responseValues[key].urlKey+'"><img src="'+responseValues[key].image+'" alt="" class="card_image card_image__small"></a>'+
+                                    '<div class="card_data">'+
+                                        '<a href="'+responseValues[key].urlKey+'" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
+                                        '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
+                                    '</div>'+
+                                '</div>'+
+                                '<div class="card_controls">'+
+                                    responseValues[key].availability+
+                                    '<div class="card_price">'+
+                                            '<span class="price">'+responseValues[key].retailPrice+'</span>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>';
+                    };
+
+                }else{
+                    content = '<div class="card">'+
+                        '<div class="card_left">'+
+                        '<div class="card_data">'+
+                        '<span class="card_subtitle">Ничего не найдено</span>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>';
+                }
+                $('.search-popup div.cards').html(content);
+
+            })
+        /*************** start *******************/
+
+        // if(value.length > 2){
+        //
+        //     let timer;
+        //     let keyPause = 1000; // задержка в нажатии кнопок
+        //     clearTimeout(timer); //сбрасываем таймер если задержка меньше заданной
+        //     timer = setTimeout(function(){
+        //
+        //         content = '';
+        //
+        //         $.ajax({
+        //             url: '/car-ajax/search-article',
+        //             type: 'post',
+        //             dataType: 'json',
+        //             data: { article : value }
+        //         })
+        //             .done(function(response) {
+        //                 if (response.data.success === true) {
+        //                     responseValues = response.data.values;
+        //
+        //                     for (let key in responseValues) {
+        //                         content += '<div class="card">'+
+        //                             '<div class="card_left">'+
+        //                             '<div class="card_data">'+
+        //                             '<a href="#" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
+        //                             '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
+        //                             '</div>'+
+        //                             '</div>'+
+        //                             '</div>';
+        //                     };
+        //
+        //                 }else{
+        //                     content = '<div class="card">'+
+        //                         '<div class="card_left">'+
+        //                         '<div class="card_data">'+
+        //                         '<span class="card_subtitle">Ничего не найдено</span>'+
+        //                         '</div>'+
+        //                         '</div>'+
+        //                         '</div>';
+        //                 }
+        //                 $('.search-popup div.cards').html(content);
+        //
+        //             })
+        //     }, keyPause);
+        // }
+        /*************** end *******************/
+
     }, 1000));
 }
 
@@ -210,10 +326,22 @@ if (loadMoreButton) {
 /* input numbers */
 const inputNumberMinusElements = document.querySelectorAll('.js-input-number-minus');
 const inputNumberPLusElements = document.querySelectorAll('.js-input-number-plus');
+const deleteElements = document.querySelectorAll('.cart-table_delete');
 
 if (inputNumberMinusElements.length) {
     function decerease(e) {
-        e.target.nextElementSibling.value = Number(e.target.nextElementSibling.value) - 1;
+        if(e.target.nextElementSibling.value > 1){
+            e.target.nextElementSibling.value = Number(e.target.nextElementSibling.value) - 1;
+            $.ajax({
+                url: '/cart/minus',
+                type: 'post',
+                dataType: 'json',
+                data: { basketId : e.target.value }
+            })
+                .done(function(response) {
+                    $('span.cart-total').html(response);
+                })
+        }
     }
 
     inputNumberMinusElements.forEach(el => el.addEventListener('click', decerease));
@@ -221,9 +349,38 @@ if (inputNumberMinusElements.length) {
 if (inputNumberPLusElements.length) {
     function incerease(e) {
         e.target.previousElementSibling.value = Number(e.target.previousElementSibling.value) + 1;
+        $.ajax({
+            url: '/cart/plus',
+            type: 'post',
+            dataType: 'json',
+            data: { basketId : e.target.value }
+        })
+            .done(function(response) {
+                $('span.cart-total').html(response);
+          })
     }
 
     inputNumberPLusElements.forEach(el => el.addEventListener('click', incerease));
+}
+
+if (deleteElements.length) {
+    function deleteRow(e) {
+        $.ajax({
+            url: '/cart/delete',
+            type: 'post',
+            dataType: 'json',
+            data: {basketId: e.target.value}
+        })
+            .done(function (response) {
+                e.target.closest('tr').remove();
+                $('span.cart-total').html(response);
+                if($('table.cart-table tbody tr').length < 1){
+                    location.href = '/cart';
+                }
+            })
+    }
+
+    deleteElements.forEach(el => el.addEventListener('click', deleteRow));
 }
 
 /* Tabs in form */

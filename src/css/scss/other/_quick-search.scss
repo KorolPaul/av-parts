@@ -1,7 +1,11 @@
 .quick-search {
     color: #fff;
     background: url(#{$img}/header.jpg) no-repeat center / cover;
-    padding: 54px 64px;
+    padding: 54px 0;
+    @include tablet {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
 
     &_holder {
         @include layout;
