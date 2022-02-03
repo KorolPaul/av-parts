@@ -8,6 +8,9 @@
         text-align: center;
         margin: 0 0 15px;
     }
+    &_wrapper {
+        overflow: auto;
+    }
 
     th {
         font-weight: bold;

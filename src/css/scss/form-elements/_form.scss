@@ -1,7 +1,7 @@
 .form {
     &_row {
-        display: flex;
         @include tablet {
+            display: flex;
             gap: 30px;
         }
     }
@@ -23,9 +23,14 @@
         }
     }
     &_tabs-button {
+        @include button;
         background: #fff;
         color: $cRed;
+        font-size: 15px;
         border: 1px solid $cRed;
+        @include tablet {
+            font-size: 18px;
+        }
 
         &:hover,
         &.active {

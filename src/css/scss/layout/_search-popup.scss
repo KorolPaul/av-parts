@@ -15,7 +15,9 @@
     transition: .2s ease opacity;
 
     &.opened {
-        opacity: 1;
-        pointer-events: all;
+        @include tablet {
+            opacity: 1;
+            pointer-events: all;
+        }
     }
 }

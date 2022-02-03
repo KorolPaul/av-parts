@@ -4,7 +4,8 @@
     top: 0;
     z-index: 1;
 
-    &.popup-opened {
+    &.popup-opened,
+    .mobile-menu-opened & {
         z-index: 11;
     }
 
@@ -48,6 +49,7 @@
             padding: 0;
             max-width: none;
             width: auto;
+            overflow: inherit;
         }
 
         &.opened {
@@ -90,26 +92,36 @@
         margin: 30px 0;
     }
     &_logo {
+        background: url(#{$img}/logo.svg) no-repeat center / auto 90%;
+        width: 190px;
+        height: 45px;
         color: $color;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 24px;
-        white-space: nowrap;
+        font-size: 12px;
+        line-height: 1;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
         @include tablet {
-            font-size: 35px;
-            line-height: 35px;
-            margin: 0 18px;
+            margin: -10px 18px 0;
+            height: 55px;
+            background-position: left top;
         }
         @include desktop {
-            margin: 0;
+            height: 65px;
+            margin: -10px 0 0;
+        }
+    }
+    &_logo-text {
+        position: absolute;
+        left: 0;
+        top: 100%;
+        display: none;
+        color: #8F8F8F;
+        @include tablet {
+            display: block;
         }
     }
     &_column {
-        
-
-        @include tablet {
-            border-left: 1px solid $cGrey;
-        }
         @include desktop {
             padding: 0 16px;
             margin: 0;
@@ -119,24 +131,58 @@
             border-left: none;
         }
 
+        
+
         &__mobile {
             display: block;
+            @include tablet {
+                position: relative;
+            }
+
+            &::before {
+                @include tablet {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 1px;
+                    background-color: $cGrey;
+                    height: 38px;
+                    margin-top: -19px;
+                }
+            }
         }
         &__tablet {
             @include tablet {
                 display: block;
+                position: relative;
+            }
+
+            &::before {
+                @include tablet {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    width: 1px;
+                    background-color: $cGrey;
+                    height: 38px;
+                    margin-top: -19px;
+                }
             }
         }
     }
     &_info {
         background: $cLight;
         margin: 0 -15px;
-        padding: 10px 15px 10px 57px;
+        padding: 10px 15px 10px 15px;
         position: relative;
+        display: flex;
+        align-items: center;
         @include desktop {
             background-color: transparent;
             margin: 0;
-            padding: 0 0 0 42px;
+            padding: 0;
         }
     }
     &_info-icon {

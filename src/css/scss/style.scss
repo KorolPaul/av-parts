@@ -56,11 +56,13 @@
 @import  "other/table-wrapper";
 @import  "other/search-results";
 @import  "other/marker";
+@import  "other/marker-icon";
 @import  "other/more-button";
 @import  "other/adress";
 @import  "other/contacts";
 @import  "other/page-404";
 @import  "other/loader";
+@import  "other/shop";
 
 /* catalog */
 @import  "catalog/catalog";
@@ -85,3 +87,4 @@
 
 /* plugins */
 @import  "plugins/choises";
+@import  "plugins/lightbox";

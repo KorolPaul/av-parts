@@ -14,6 +14,10 @@
         }
     }
 
+    & > div:not([class]) {
+        flex-grow: 1;
+    }
+
     & + & {
         margin-top: -50px;
         @include tablet {
@@ -23,15 +27,24 @@
 
     &_sidebar {
         @include desktop {
-            width: $sidebar-width;
+            width: $sidebar-width__small;
             margin: 0 30px 0 0;
             flex-shrink: 0;
+        }
+        @include desktop-large() {
+            width: $sidebar-width;
         }
 
         &__right {
             @include desktop {
                 width: 315px;
                 margin: 0 0 0 30px;
+            }
+        }
+
+        & + div {
+            @include desktop {
+                width: 100%;
             }
         }
     }

@@ -12,7 +12,7 @@
     @media all and (min-width: 768px) { @content; }
 }
 @mixin desktop() {
-    @media all and (min-width: 1024px) { @content; }
+    @media all and (min-width: 1124px) { @content; }
 }
 @mixin desktop-large() {
     @media all and (min-width: 1366px) { @content; }
@@ -37,12 +37,14 @@
 }
 
 @mixin layout {
-    padding-left: $indent;
-    padding-right: $indent;
+    padding-left: 20px;
+    padding-right: 20px;
     @include tablet {
         max-width: $max-width;
         margin-left: auto;
         margin-right: auto;
+        padding-left: $indent;
+        padding-right: $indent;
     }
 
 }

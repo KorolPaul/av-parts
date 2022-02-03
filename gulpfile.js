@@ -1,7 +1,7 @@
 "use strict"
 
 const gulp = require('gulp'),
-      sass = require('gulp-sass'),
+      sass = require('gulp-sass')(require('sass')),
       autoprefixer = require('gulp-autoprefixer'),
       browserSync = require('browser-sync'),
       imagemin = require('gulp-imagemin'),

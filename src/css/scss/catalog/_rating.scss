@@ -9,6 +9,7 @@
     }
     &_stars {
         display: flex;
+        line-height: 1;
     }
     &_star {
         width: 14px;
@@ -25,12 +26,13 @@
     }
     &_status-value {
         color: #fff;
+        margin: 0 0 0 4px;
     }
     &_title {
         font-size: 12px;
-        text-decoration: underline;
     }
     &_link {
         white-space: nowrap;
+        font-size: 12px;
     }
 }

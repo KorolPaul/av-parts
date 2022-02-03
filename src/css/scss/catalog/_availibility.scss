@@ -3,6 +3,7 @@
     padding: 0 0 0 26px;
     color: $cGreen;
     background: url(#{$img}/check-green.svg) no-repeat left center;
+    white-space: nowrap;
 
     &__order {
         background-image: url(#{$img}/clock-orange.svg);

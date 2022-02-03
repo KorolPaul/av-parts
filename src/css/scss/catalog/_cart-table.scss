@@ -32,6 +32,7 @@
         }
     }
     &_delete {
+        min-width: 0;
         background: url(#{$img}/delete.svg) no-repeat center center / 12px 12px;
         position: absolute;
         top: 0;

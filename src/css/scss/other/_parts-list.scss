@@ -53,6 +53,15 @@
         @include media(1600px) {
             width: calc(33.3% - 60px);
         }
+
+        .parts-list__small & {
+            @include media(1600px) {
+                width: calc(50% - 30px);
+            }
+        }
+        &[data-count="0"] {
+            display: none;
+        }
     }
     &_item-icon {
         position: absolute;

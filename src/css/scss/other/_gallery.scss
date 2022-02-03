@@ -33,6 +33,15 @@
         padding: 0 0 28.5%;
         position: relative;
         flex-grow: 1;
+        cursor: pointer;
+        transition: .2s ease opacity;
+
+        &:hover {
+            opacity: .6;
+        }
+        &:active {
+            opacity: .8;
+        }
     }
     &_carousel-image {
         position: absolute;

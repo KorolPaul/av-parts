@@ -1,5 +1,5 @@
 {
-  "name": "Lucky7",
+  "name": "AV-parts",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
@@ -15,9 +15,10 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-imagemin": "^6.0.0",
     "gulp-jpeg-xr": "^1.1.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "gulp-uglify-es": "^1.0.4"
+    "gulp-uglify-es": "^1.0.4",
+    "sass": "^1.49.7"
   },
   "browserslist": [
     "last 2 versions",

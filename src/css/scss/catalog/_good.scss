@@ -1,9 +1,11 @@
 .good {
+    margin: 0 0 20px;
     @include tablet {
         display: flex;
         justify-content: space-between;
         gap: 30px;
         flex-wrap: wrap;
+        margin-bottom: 40px;
     }
 
     &_gallery,
@@ -31,7 +33,10 @@
         }
     }
     &_table-cell {
-        font-size: 20px;
+        font-size: 15px;
+        @include tablet {
+            font-size: 20px;
+        }
 
         &:nth-child(1) {
             color: #8F8F8F;

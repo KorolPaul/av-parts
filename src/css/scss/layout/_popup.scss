@@ -9,10 +9,14 @@
     transform: translate(-50%, -50%);
     max-height: 50vh;
     z-index: 11;
-    width: 80%;
+    width: 90%;
     max-width: 1360px;
-    height: 70vh;
+    height: 75vh;
     max-height: 600px;
+    @include tablet {
+        height: 70vh;
+        width: 80%;
+    }
 
     &.opened {
         display: block;

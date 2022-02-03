@@ -3,6 +3,8 @@ const fadeMobileElement = document.querySelector('.fade__mobile');
 
 function closeAllOpened() {
     document.querySelectorAll('.opened').forEach(el => el.classList.remove('opened'));
+    document.querySelectorAll('.popup-opened').forEach(el => el.classList.remove('popup-opened'));
+    document.querySelectorAll('.mobile-menu-opened').forEach(el => el.classList.remove('mobile-menu-opened'));
 }
 
 if (fadeElement) {
@@ -35,6 +37,7 @@ function toggleMainmenu(e) {
     e.preventDefault();
     fadeElement.classList.toggle('opened');
     additionalContentElement.classList.toggle('opened');
+    document.body.classList.toggle('mobile-menu-opened');
 }
 
 if (menuToggleElement) {
@@ -159,15 +162,16 @@ const header = document.querySelector('.header');
 const loader = document.querySelector('.loader');
 
 const searchInput = document.querySelector('.js-search-input');
+const searchInputTree = document.querySelector('.js-search-input-tree');
 const searchContainers = document.querySelectorAll('.js-search-container');
 const searchVisibilityContainers = document.querySelectorAll('.js-visibility-container');
 
-if (headerSearchInput) {
+if (headerSearchInput && screen.width > 768) {
     function onInputChange(e) {
-        console.log(e);
         const value = e.target.value;
 
         searchPopup.classList.toggle('opened');
+        $('.search-popup .cards').html('');
         header.classList.toggle('popup-opened');
         fadeElement.classList.toggle('opened');
         searchInput.value = value;
@@ -178,7 +182,7 @@ if (headerSearchInput) {
     headerSearchInput.addEventListener('paste', onInputChange);
 }
 
-if (searchInput) {
+if (searchInputTree) {
     function highlightSerachResuts(e) {
         const value = e.target.value;
         const lowerCasedValue = e.target.value.toLowerCase();
@@ -194,11 +198,13 @@ if (searchInput) {
                 el.innerHTML = el.innerText;
             }
         });
+        let resultsCount = 0;
         searchVisibilityContainers.forEach(el => {
             const lowerCasedHTML = el.innerText.toLowerCase();
             if (value) {
                 if (lowerCasedHTML.includes(lowerCasedValue)) {
                     el.style.display = 'block';
+                    resultsCount++;
                 } else {
                     el.style.display = 'none';
                 }
@@ -206,109 +212,74 @@ if (searchInput) {
                 el.style.display = 'block';
             }
         });
-    } 
+        
+        const listItems = document.querySelectorAll('.parts-list_item');
+        listItems.forEach(el => {
+            el.dataset.count = el.querySelectorAll('.js-visibility-container[style="display: block;"]').length;
+        });
+    }
 
-    searchInput.addEventListener('input', highlightSerachResuts);
+    searchInputTree.addEventListener('input', highlightSerachResuts);
+}
 
+if (searchInput) {
     searchInput.addEventListener('input', debounce(function (e) {
         // аякс запрос
         const value = e.target.value;
 
         /*************** start *******************/
-        content = '';
-        loader.classList.add('active');
+        
+        if (value !== '') {
+            content = '';
+            $('.search-popup .cards').html('');
+            loader.classList.add('active');
 
-        $.ajax({
-            url: '/car-ajax/search-article',
-            type: 'post',
-            dataType: 'json',
-            data: { article : value }
-        })
-            .done(function(response) {
-                loader.classList.remove('active');
-                if (response.data.success === true) {
-                    responseValues = response.data.values;
-
-                    for (let key in responseValues) {
-                        content +=
-                            '<div class="card">'+
-                                '<div class="card_left">'+
-                                    '<a href="'+responseValues[key].urlKey+'"><img src="'+responseValues[key].image+'" alt="" class="card_image card_image__small"></a>'+
-                                    '<div class="card_data">'+
-                                        '<a href="'+responseValues[key].urlKey+'" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
-                                        '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
-                                    '</div>'+
-                                '</div>'+
-                                '<div class="card_controls">'+
-                                    responseValues[key].availability+
-                                    '<div class="card_price">'+
-                                            '<span class="price">'+responseValues[key].retailPrice+'</span>'+
-                                    '</div>'+
-                                '</div>'+
-                            '</div>';
-                    };
-
-                }else{
-                    content = '<div class="card">'+
-                        '<div class="card_left">'+
-                        '<div class="card_data">'+
-                        '<span class="card_subtitle">Ничего не найдено</span>'+
-                        '</div>'+
-                        '</div>'+
-                        '</div>';
-                }
-                $('.search-popup div.cards').html(content);
-
+            $.ajax({
+                url: '/car-ajax/search-article',
+                type: 'post',
+                dataType: 'json',
+                data: { article : value }
             })
-        /*************** start *******************/
+                .done(function(response) {
+                    loader.classList.remove('active');
+                    if (response.data.success === true) {
+                        responseValues = response.data.values;
+    
+                        for (let key in responseValues) {
+                            content +=
+                                '<div class="card">'+
+                                    '<div class="card_left">'+
+                                        '<a href="'+responseValues[key].urlKey+'"><img src="'+responseValues[key].image+'" alt="" class="card_image card_image__small"></a>'+
+                                        '<div class="card_data">'+
+                                            '<a href="'+responseValues[key].urlKey+'" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
+                                            '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="card_controls">'+
+                                        responseValues[key].availability;
+                                        if(responseValues[key].retailPrice != ''){
+                                            content += '<div class="card_price">'+
+                                                '<span class="price">'+responseValues[key].retailPrice+'</span>'+
+                                            '</div>';
+                                        }
+                             content += '</div>'+
+                                '</div>';
+                        };
+                    }else{
+                        content = '<div class="card">'+
+                            '<div class="card_left">'+
+                            '<div class="card_data">'+
+                            '<span class="card_subtitle">Ничего не найдено</span>'+
+                            '</div>'+
+                            '</div>'+
+                            '</div>';
+                    }
+                    $('.search-popup div.cards').html(content);
+    
+                })
+        }
+    }, 600));
 
-        // if(value.length > 2){
-        //
-        //     let timer;
-        //     let keyPause = 1000; // задержка в нажатии кнопок
-        //     clearTimeout(timer); //сбрасываем таймер если задержка меньше заданной
-        //     timer = setTimeout(function(){
-        //
-        //         content = '';
-        //
-        //         $.ajax({
-        //             url: '/car-ajax/search-article',
-        //             type: 'post',
-        //             dataType: 'json',
-        //             data: { article : value }
-        //         })
-        //             .done(function(response) {
-        //                 if (response.data.success === true) {
-        //                     responseValues = response.data.values;
-        //
-        //                     for (let key in responseValues) {
-        //                         content += '<div class="card">'+
-        //                             '<div class="card_left">'+
-        //                             '<div class="card_data">'+
-        //                             '<a href="#" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
-        //                             '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
-        //                             '</div>'+
-        //                             '</div>'+
-        //                             '</div>';
-        //                     };
-        //
-        //                 }else{
-        //                     content = '<div class="card">'+
-        //                         '<div class="card_left">'+
-        //                         '<div class="card_data">'+
-        //                         '<span class="card_subtitle">Ничего не найдено</span>'+
-        //                         '</div>'+
-        //                         '</div>'+
-        //                         '</div>';
-        //                 }
-        //                 $('.search-popup div.cards').html(content);
-        //
-        //             })
-        //     }, keyPause);
-        // }
-        /*************** end *******************/
-
-    }, 1000));
 }
 
 /* load more */
@@ -390,12 +361,15 @@ const formTabsBlocks = document.querySelectorAll('.form_tabs-content');
 if (formTabsButtons.length) {
     function switchTab(e) {
         e.preventDefault();
-
-        const index = e.target.dataset.tabLink;
-        formTabsButtons.forEach(el => el.classList.remove('active'));
+        const index = Number(e.target.dataset.tabLink);
+        formTabsButtons.forEach(el => {
+            el.classList.remove('active');
+            el.querySelector('input').removeAttribute('checked');
+        });
         formTabsBlocks.forEach(el => el.classList.remove('active'));
 
         formTabsButtons[index - 1].classList.add('active');
+        formTabsButtons[index - 1].querySelector('input').setAttribute('checked', 'checked');
         formTabsBlocks[index - 1].classList.add('active');
     }
 
@@ -423,3 +397,10 @@ function debounce(func, wait, immediate = false) {
         if (callNow) func.apply(context, args);
     };
 };
+
+/* Gallery */
+if (typeof lightGallery !== "undefined") {
+    lightGallery(document.getElementById('lightgallery'), {
+        speed: 500,
+    });
+}

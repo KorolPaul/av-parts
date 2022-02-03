@@ -88,8 +88,15 @@ sup {
     font-size: 14px;
     line-height: 24px;
     color: #999;
-    position: relative;
-    top: -20px;
+    white-space: nowrap;
+    display: block;
+    margin-top: 10px;
+    @include tablet {
+        position: relative;
+        top: -20px;
+        display: inline;
+        margin-top: 0;
+    }
 }
 
 fieldset {
@@ -155,4 +162,26 @@ hr {
 
 .sticky-header-page {
     position: relative;
+}
+
+.title-count {
+    color: $cGrey;
+    font-size: .55em;
+    margin: 0 0 0 5px;
+    top: -11px;
+    display: inline;
+    @include tablet {
+        font-size: .7em;
+    }
+
+    .menu_toggle & {
+        margin: 0;
+        @include tablet {
+            margin: 0 0 0 5px;
+        }
+    }
+}
+
+.main-button-count {
+    color: rgba($color, .5);
 }

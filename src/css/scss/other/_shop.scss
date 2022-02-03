@@ -1,0 +1,62 @@
+.shop {
+    padding: 0 15px;
+
+    &_title {
+        display: block;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 0 0 10px;
+    }
+    &_price {
+        color: #8F8F8F;
+        font-size: 14px;
+        line-height: 24px;
+        margin: 0 16px 0 0;
+        white-space: nowrap;
+    }
+    &_phone {
+        display: block;
+        margin: 0 0 10px;
+    }
+    &_phone-number {
+        white-space: nowrap;
+    }
+    &_phone-button {
+        display: inline-block;
+        min-width: 0;
+        padding: 0 16px;
+        position: relative;
+        background-color: transparent;
+        color: #313235;
+        width: auto;
+        padding: 0;
+        @include tablet {
+            min-width: 0;
+        }
+    }
+    &_phone-button-title {
+        position: absolute;
+        right: 0;
+        top: -3px;
+        color: #8f8f8f;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1;
+    }
+    &_city {
+        background: url(#{$img}/point.svg) no-repeat left center / contain;
+        padding-left: 30px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: calc(100% - 30px);
+        display: block;
+        margin: 0 0 10px;
+        text-overflow: ellipsis;
+    }
+    &_controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}

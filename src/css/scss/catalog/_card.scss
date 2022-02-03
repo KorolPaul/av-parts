@@ -8,7 +8,7 @@
     position: relative;
     border-top: 1px solid #F2F2F2;
     transition: .2s ease box-shadow, .2s ease border;
-    @include tablet {
+    @include desktop {
         padding: 24px 50px 22px 26px;
         display: flex;
         justify-content: space-between;
@@ -21,17 +21,18 @@
     }
 
     &:hover {
-        z-index: 1;
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
-        border-top-color: transparent;
-
+        @include tablet {
+            z-index: 1;
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.15);
+            border-top-color: transparent;
+        }
     }
 
     &__small {
         display: block;
         background-color: transparent;
         border-top: none;
-        @include tablet {
+        @include desktop {
             padding-right: 26px;
         }
 
@@ -42,21 +43,33 @@
     }
 
     &_left {
-        @include tablet {
+        flex-grow: 1;
+        @include desktop {
             display: flex;
             align-items: center;
+        }
+
+        & > a {
+            width: 220px;
+            flex-shrink: 0;
+        }
+        .search-results & > a {
+            width: auto;
         }
     }
     &_data {
         margin: 0 0 30px;
-        @include tablet {
-            margin: 0;
+        flex-grow: 1;
+        @include desktop {
+            margin: 0px 50px 0px 5px;
         }
     }
     &_image {
         width: 180px;
         flex-shrink: 0;
         margin: 0 40px 0 0;
+        max-height: 300px;
+        object-fit: contain;
 
         &__small {
             width: 84px;
@@ -83,9 +96,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 10px 0 0;
+        margin: 7px 0 0;
 
-        &:last-child {
+        &__no-indent {
             margin-top: 0;
         }
     }
@@ -93,6 +106,13 @@
         &:nth-child(1) {
             color: #8F8F8F;
             flex-grow: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+            @include desktop {
+                max-width: 300px;
+            }
         }
         &:nth-child(2) {
             flex-grow: 10;
@@ -102,18 +122,31 @@
         }
         &:nth-child(3) {
             flex-grow: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100px;
+            @include desktop {
+                max-width: 200px;
+            }
         }
 
         &__align {
             padding: 12px 0 0;
+            
+            &:nth-child(3) {
+                max-width: none;
+                overflow: visible;
+            }
         }
     }
+    &_table,
     &_controls {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        @include tablet {
+        @include desktop {
             flex-direction: column;
             align-items: flex-end;
             justify-content: inherit;
@@ -122,22 +155,27 @@
     }
     &_availibility {
         order: 2;
-        @include tablet {
+        @include desktop {
             order: inherit;
         }
     }
     &_price {
         order: 1;
-        @include tablet {
+        @include desktop {
             order: inherit;
             margin: 12px 0 32px;
             text-align: right;
         }
 
         .card__small & {
-            @include tablet {
+            @include desktop {
                 text-align: left;
                 margin-bottom: 26px;
+            }
+        }
+        .search-results & {
+            @include desktop {
+                margin-bottom: 0;
             }
         }
     }
@@ -145,7 +183,7 @@
         order: 3;
         width: 100%;
         margin: 20px 0 0;
-        @include tablet {
+        @include desktop {
             order: inherit;
             margin: 0;
             display: flex;
@@ -153,13 +191,24 @@
         }
 
         .card__small & {
-            @include tablet {
+            @include desktop {
                 display: block;
             }
 
             button {
                 width: 100%;
             }
+        }
+    }
+    &_offers {
+        @include button;
+        white-space: nowrap;
+        font-size: 16px;
+        min-width: 0;
+        margin: 0 0 16px;
+        @include tablet {
+            min-width: 0;
+            margin: 0;
         }
     }
 }

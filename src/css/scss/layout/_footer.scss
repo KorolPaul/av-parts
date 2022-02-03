@@ -37,6 +37,7 @@
     &_info-bottom {
         display: flex;
         justify-content: space-between;
+        align-items: flex-end;
         text-align: left;
     }
     &_info-payment-icon {

@@ -61,16 +61,15 @@
     }
     &_columns {
         @include tablet {
-            display: grid;
-            gap: 0;
-            grid-auto-flow: column;
-            grid-template-rows: repeat(7, auto);
+            columns: 3;
+
+            
         }
         @include desktop {
-            grid-template-rows: repeat(5, auto);
+            columns: 5;
         }
         @include desktop-large {
-            grid-template-rows: repeat(4, auto);
+            columns: 6;
         }
 
         .car-brands__compact & {
@@ -93,6 +92,11 @@
         position: relative;
         padding: 0 0 0 72px;
         margin: 0 0 34px;
+        -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+        page-break-inside: avoid; /* Firefox */
+        break-inside: avoid; /* IE 10+ */
+        break-inside: avoid-column;
+        min-height: 50px;
     }
     &_letter-value {
         position: absolute;

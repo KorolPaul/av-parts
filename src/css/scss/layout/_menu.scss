@@ -6,15 +6,29 @@
     }
 
     &_toggle {
-        background: $cRed url(#{$img}/burger-light.svg) no-repeat center right
-            22px;
+        background: url(#{$img}/burger-red.svg) no-repeat center right 22px, url(#{$img}/catalog.svg) no-repeat center left 22px;
+        background-color: #EBEBEB;
+        color: $color;
         height: 60px;
         line-height: 64px;
-        padding: 0 50px 0 24px;
+        padding: 0 50px 0 64px;
         text-align: left;
         width: 100%;
+        white-space: nowrap;
         @include desktop {
+            width: $sidebar-width__small;
+        }
+        @include desktop-large {
             width: $sidebar-width;
+        }
+
+        &__wide {
+            @include desktop {
+                width: 100%;
+            }
+            @include desktop-large {
+                width: 100%;
+            }
         }
     }
     &_list {
