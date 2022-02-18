@@ -84,7 +84,6 @@ if (partsListCategories.length) {
     }) })
 }
 
-
 /* add to cart */
 document.querySelectorAll('.add-to-cart').forEach(el => el.addEventListener('click', function(e) {
     e.preventDefault();
@@ -92,15 +91,15 @@ document.querySelectorAll('.add-to-cart').forEach(el => el.addEventListener('cli
         url: '/cart/add-to-cart',
         type: 'post',
         dataType: 'json',
-        data: { productId : e.target.value }
+        data: { productId : e.target.value, shopId : e.target.dataset.shopId }
     })
         .done(function(response) {
             if (response.data.success === true) {
                 responseValues = response.data.values;
                 $('span.cart_count').html(responseValues.count);
                 $('span.cart_value').html(responseValues.total);
-                e.target.innerHTML = 'В корзине';
-                e.target.classList.toggle('active');
+               // e.target.innerHTML = 'В корзине';
+               // e.target.classList.toggle('active');
             }
         })
 }));
@@ -136,24 +135,43 @@ if (filtersToggleElement) {
     }));
 }
 
-/* Tabs */
-const tabsButtons = document.querySelectorAll('.tabs_button');
-const tabsBlocks = document.querySelectorAll('.tabs_content');
-
-if (tabsButtons.length) {
-    function switchTab(e) {
-        e.preventDefault();
-
-        const index = e.target.dataset.tabLink;
-        tabsButtons.forEach(el => el.classList.remove('active'));
-        tabsBlocks.forEach(el => el.classList.remove('active'));
-
-        tabsButtons[index - 1].classList.add('active');
-        tabsBlocks[index - 1].classList.add('active');
-    }
-
-    tabsButtons.forEach(el => el.addEventListener('click', switchTab));
+const showMoreFiltersEl = document.querySelector('.filters_more');
+if (showMoreFiltersEl) {
+    showMoreFiltersEl.addEventListener('click', e => e.target.style.display = 'none')
 }
+
+const mobileMaekerButtonEl = document.querySelector('.header_marker-button');
+if (mobileMaekerButtonEl) {
+    mobileMaekerButtonEl.addEventListener('click', e => {
+        toggleMainmenu(e);
+        document.querySelector('.header_info .choices').click()
+    })
+}
+
+/* Tabs */
+const tabsContainers = document.querySelectorAll('.tabs');
+
+tabsContainers.forEach(tabContainer => {
+    const tabsButtons = tabContainer.querySelectorAll('.tabs_button');
+    const tabsBlocks = tabContainer.querySelectorAll('.tabs_content');
+
+    if (tabsButtons.length) {
+        function switchTab(e) {
+            e.preventDefault();
+
+            const index = e.target.dataset.tabLink;
+            tabsButtons.forEach(el => el.classList.remove('active'));
+            tabsBlocks.forEach(el => el.classList.remove('active'));
+
+            tabsButtons[index - 1].classList.add('active');
+            tabsBlocks[index - 1].classList.add('active');
+        }
+
+        tabsButtons.forEach(el => el.addEventListener('click', switchTab));
+    }
+});
+
+
 
 /* Search */
 const headerSearchInput = document.querySelector('.js-header-search');
@@ -249,19 +267,15 @@ if (searchInput) {
                             content +=
                                 '<div class="card">'+
                                     '<div class="card_left">'+
-                                        '<a href="'+responseValues[key].urlKey+'"><img src="'+responseValues[key].image+'" alt="" class="card_image card_image__small"></a>'+
+                                        '<a href="'+responseValues[key].urlKey+'"><img src="'+responseValues[key].image+'" alt="" height="120px" class="card_image card_image__small"></a>'+
                                         '<div class="card_data">'+
-                                            '<a href="'+responseValues[key].urlKey+'" class="card_title js-search-container"><span style="color: red">'+responseValues[key].article+'</span> '+responseValues[key].TradeMarkName+'</a>'+
+                                            '<a href="'+responseValues[key].urlKey+'" class="card_title js-search-container"><span style="color: red">'+responseValues[key].redPart+'</span>'+responseValues[key].blackPart+' '+responseValues[key].TradeMarkName+'</a>'+
                                             '<span class="card_subtitle">'+responseValues[key].PartName+'</span>'+
                                         '</div>'+
                                     '</div>'+
                                     '<div class="card_controls">'+
-                                        responseValues[key].availability;
-                                        if(responseValues[key].retailPrice != ''){
-                                            content += '<div class="card_price">'+
-                                                '<span class="price">'+responseValues[key].retailPrice+'</span>'+
-                                            '</div>';
-                                        }
+                                        responseValues[key].availability+
+                                        responseValues[key].retailPrice;
                              content += '</div>'+
                                 '</div>';
                         };
@@ -274,11 +288,12 @@ if (searchInput) {
                             '</div>'+
                             '</div>';
                     }
+                    $('.search-popup div.cards').html('');
                     $('.search-popup div.cards').html(content);
-    
+
                 })
         }
-    }, 600));
+    }, 200));
 
 }
 
@@ -310,7 +325,8 @@ if (inputNumberMinusElements.length) {
                 data: { basketId : e.target.value }
             })
                 .done(function(response) {
-                    $('span.cart-total').html(response);
+                    $('span.cart-total').html(response.bigCart);
+                    $('span.cart_value').html(response.smallCart);
                 })
         }
     }
@@ -327,7 +343,8 @@ if (inputNumberPLusElements.length) {
             data: { basketId : e.target.value }
         })
             .done(function(response) {
-                $('span.cart-total').html(response);
+                $('span.cart-total').html(response.bigCart);
+                $('span.cart_value').html(response.smallCart);
           })
     }
 
@@ -344,7 +361,8 @@ if (deleteElements.length) {
         })
             .done(function (response) {
                 e.target.closest('tr').remove();
-                $('span.cart-total').html(response);
+                $('span.cart-total').html(response.bigCart);
+                $('span.cart_value').html(response.smallCart);
                 if($('table.cart-table tbody tr').length < 1){
                     location.href = '/cart';
                 }

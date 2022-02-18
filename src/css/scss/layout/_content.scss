@@ -16,6 +16,9 @@
 
     & > div:not([class]) {
         flex-grow: 1;
+        @include desktop {
+            max-width: calc(100% - 315px - 30px);
+        }
     }
 
     & + & {

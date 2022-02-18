@@ -5,6 +5,10 @@
         padding-bottom: 70px;
     }
 
+    &__no-indent {
+        padding-top: 0;
+    }
+
     &_title {
         @extend %heading-1;
         text-align: center;
@@ -15,6 +19,10 @@
         padding: 30px 12px;
         @include tablet {
             padding: 30px 32px;
+        }
+
+        .compatibility__no-indent & {
+            padding-top: 0;
         }
     }
     &_models {
