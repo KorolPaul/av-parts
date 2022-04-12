@@ -121,6 +121,11 @@
         .active > & {
             display: block;
         }
+        & > li:not([class]) {
+            list-style: none;
+            background: transparent;
+            padding-left: 0;
+        }
     }
     &_sublist-link {
         font-size: 14px;

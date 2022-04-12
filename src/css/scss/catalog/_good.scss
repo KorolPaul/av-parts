@@ -81,3 +81,9 @@
         width: 100%;
     }
 }
+
+ .good-wrapper {
+    @include desktop {
+        max-width: calc(100% - 315px - 30px);
+    }
+}
