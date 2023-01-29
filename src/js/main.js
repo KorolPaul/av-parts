@@ -28,6 +28,7 @@ popupToggleElements.forEach(el => el.addEventListener('click', (e) => {
     togglePopup();
 }));
 
+
 /* catalog menu */
 const menuToggleElement = document.querySelector('.menu-toggle');
 const additionalContentElement = document.querySelector('.header_additional-content');
@@ -274,8 +275,8 @@ if (searchInput) {
                                         '</div>'+
                                     '</div>'+
                                     '<div class="card_controls">'+
-                                        responseValues[key].availability+
-                                        responseValues[key].retailPrice;
+                                        responseValues[key].retailPrice+
+                                        responseValues[key].availability;
                              content += '</div>'+
                                 '</div>';
                         };
@@ -361,11 +362,11 @@ if (deleteElements.length) {
         })
             .done(function (response) {
                 e.target.closest('tr').remove();
-                $('span.cart-total').html(response.bigCart);
-                $('span.cart_value').html(response.smallCart);
-                if($('table.cart-table tbody tr').length < 1){
+                // $('span.cart-total').html(response.bigCart);
+                // $('span.cart_value').html(response.smallCart);
+                // if($('table.cart-table tbody tr').length < 1){
                     location.href = '/cart';
-                }
+                // }
             })
     }
 

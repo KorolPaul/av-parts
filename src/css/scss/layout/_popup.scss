@@ -18,6 +18,16 @@
         width: 80%;
     }
 
+    &__small {
+        width: auto;
+        max-width: 1360px;
+        height: auto;
+        @include tablet {
+            height: auto;
+            width: auto;
+        }
+    }
+
     &.opened {
         display: block;
     }
@@ -46,5 +56,12 @@
         &:active {
             opacity: 1;
         }
+    }
+    &_title {
+        text-align: center;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 120.5%;
+        text-transform: none;
     }
 }

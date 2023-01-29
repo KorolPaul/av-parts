@@ -56,3 +56,25 @@
         -webkit-text-fill-color: transparent;
     }
 }
+
+@mixin button-reset {
+    border: none;
+    padding: 0;
+    background: transparent;
+    height: auto;
+    line-height: 1.2;
+    min-width: 0;
+    width: auto;
+    border-radius: 0;
+    text-transform: none;
+
+    &:hover {
+        transform: none;
+        background: transparent;
+    }
+
+    &:active {
+        transform: none;
+        background: transparent;
+    }
+}

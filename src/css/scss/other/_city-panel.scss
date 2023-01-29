@@ -1,0 +1,47 @@
+.city-panel {
+    background-color: $color;
+    align-items: center;
+    justify-content: center;
+    padding: 9px;
+    text-align: center;
+    @include tablet {
+        display: flex;
+        gap: 30px;
+        text-align: left;
+    }
+
+    &_title {
+        color: $bg_color;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+    }
+    &_buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 12px 0 0;
+        @include tablet {
+            margin: 0;
+        }
+    }
+    &_button {
+        border-radius: 3px;
+        min-width: 10px;
+        font-size: 14px;
+        flex-grow: 0;
+        width: auto;
+
+        &__link {
+            @include button-reset;
+            border-radius: 0;
+            color: $cRed;
+            text-decoration: underline;
+            margin-left: 10px;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
