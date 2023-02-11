@@ -1,0 +1,45 @@
+.profile-menu {
+    background: $cLight;
+    padding: 2px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 0;
+    margin-bottom: 50px;
+
+    &_link {
+        display: block;
+        font-size: 18px;
+        line-height: 1;
+        padding: 16px 0 16px 48px;
+        position: relative;
+        color: $color;
+
+        &.active {
+            font-weight: 700;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background-color: transparent;
+            transition: .2s $easing background;
+        }
+        &.active::before,
+        &:hover::before {
+            background-color: $cRed;
+        }
+    }
+    &_icon {
+        width: 18px;
+        left: 20px;
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+    }
+}

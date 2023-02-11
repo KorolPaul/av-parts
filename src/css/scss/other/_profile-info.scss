@@ -1,0 +1,13 @@
+.profile-info {
+    
+    label {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1;
+        display: block;
+        margin: 0 0 10px;
+        @include tablet {
+            font-size: 18px;
+        }
+    }
+}
