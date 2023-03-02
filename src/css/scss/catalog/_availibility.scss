@@ -9,4 +9,8 @@
         background-image: url(#{$img}/clock-orange.svg);
         color: $cYellow;
     }
+    &__canceled {
+        background-image: url(#{$img}/delete.svg);
+        color: $cRed;
+    }
 }

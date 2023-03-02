@@ -8,6 +8,12 @@
         margin-bottom: 40px;
     }
 
+    &_header {
+        @include tablet {
+            display: flex;
+        }
+    }
+
     &_gallery,
     &_data {
         margin: 0 0 30px;
@@ -79,6 +85,23 @@
     }
     &_characteristics {
         width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+    &_characteristics-content {
+        flex-grow: 1;
+    }
+    &_characteristics-sidebar {
+        @include tablet {
+            max-width: 315px;
+        }
+    }
+    &_shops {
+        @include tablet {
+            width: 33%;
+        }
     }
 }
 

@@ -1,0 +1,88 @@
+.orders-table {
+    margin-bottom: 30px;
+
+    &_image {
+        width: 40px;
+        @include tablet {
+            width: 95px;
+        }
+    }
+    &_title {
+        color: $color;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 19px;
+        @include tablet {
+            line-height: 24px;
+        }
+        @include desktop {
+            font-size: 20px;
+        }
+    }
+    &_cell {
+        @include tablet {
+            padding: 22px;
+            position: relative;
+        }
+
+        .old-price {
+            @include tablet {
+                display: block;
+            }
+        }
+    }
+
+    thead {
+        display: none;
+        @include tablet {
+            display: table-header-group;
+        }
+    }
+    th {
+        color: rgba(143, 143, 143, .5);
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 1;
+        padding: 16px;
+        border-bottom: 1px solid rgba(143, 143, 143, .5);
+        text-align: center;
+        @include tablet {
+            font-size: 14px;
+        }
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+    td {
+        padding: 16px;
+        text-align: center;
+        @include tablet {
+            border-bottom: 1px solid rgba(143, 143, 143, .5);
+        }
+
+        &:first-child {
+            text-align: left;
+        }
+
+        &:nth-child(2) {
+            width: calc(100% - 54px);
+            margin: 0 0 0 14px;
+            @include tablet {
+                width: auto;
+                margin: 0;
+            }
+        }
+    }
+    tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+        border-bottom: 1px solid rgba(143, 143, 143, .5);
+        @include tablet {
+            display: table-row;
+            border-bottom: none;
+        }
+    }
+}
