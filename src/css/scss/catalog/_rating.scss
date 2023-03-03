@@ -1,4 +1,10 @@
 .rating {
+    &__dark {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
     &_title {
         color: rgba(255, 255, 255, 0.7);
     }
@@ -23,6 +29,18 @@
         &:hover {
             opacity: 1;
         }
+
+        .rating__dark & {
+            cursor: pointer;
+            background-image: url(#{$img}/star-gray.svg);
+            opacity: 1;
+
+            &.active,
+            &:hover {
+                opacity: 1;
+                background-image: url(#{$img}/star-yellow.svg);
+            }
+        }
     }
     &_status-value {
         color: #fff;
@@ -34,5 +52,9 @@
     &_link {
         white-space: nowrap;
         font-size: 12px;
+
+        &__empty {
+            color: $cGrey;
+        }
     }
 }

@@ -11,9 +11,24 @@
         width: 140px;
     }
 
+    &__small {
+        height: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        background-size: 11px auto;
+        width: 85px;
+    }
+
     &.active {
         background-color: $cGreen;
         background-image: url(#{$img}/cart-added.svg);
         background-position-y: 40%;
+    }
+
+    &:hover {
+        opacity: .6;
+    }
+    &:active {
+        opacity: .8;
     }
 }

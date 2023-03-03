@@ -1,0 +1,154 @@
+.shop-card {
+    background: #fff;
+    padding: 14px 10px;
+    position: relative;
+    transition: .2s ease box-shadow;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+    min-width: 300px;
+    min-height: 88px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    @include desktop {
+        margin-bottom: 10px;
+    }
+
+    &__premium {
+        background: linear-gradient(93.74deg, #FFF2C4 5.26%, #FFFFFF 100%);
+    }
+    &__empty {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    &:hover {
+        @include tablet {
+            z-index: 1;
+        }
+    }
+
+    &_left {
+        flex-grow: 1;
+    }
+    &_right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    &_title {
+        color: $color;
+        display: block;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    &_title-badge {
+        vertical-align: middle;
+        margin: -7px 0 0 4px;
+    }
+    &_adresses {
+        font-weight: 550;
+        font-size: 12px;
+        color: $cGrey;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+        &:active {
+            color: $color;
+        }
+    }
+    &_table-row {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 7px 0 0;
+        gap: 4px;
+    }
+    &_table-cell {
+        font-size: 12px;
+        &:first-child {
+            font-weight: 700;
+        }
+    }
+    &_controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    &_availibility {
+        font-size: 12px;
+        line-height: 18px;
+        margin: 8px 0 0;
+        order: 2;
+        @include desktop {
+            order: inherit;
+        }
+    }
+    &_price {
+        .price {
+            font-size: 16px;
+        }
+        .old-price,
+        .old-price_fractional {
+            font-size: 8px;
+        }
+        .old-price {
+            margin-right: 4px;
+        }
+    }
+    &_button {
+        
+    }
+    &_offers {
+        @include button;
+        white-space: nowrap;
+        font-size: 16px;
+        min-width: 0;
+        margin: 0 0 16px;
+        @include tablet {
+            min-width: 0;
+            margin: 0;
+        }
+    }
+    &_logo {
+        max-width: 100px;
+        vertical-align: middle;
+        margin: -4px 3px 0 0;
+    }
+    &_phone {
+        font-size: 16px;
+        line-height: 16px;
+        background: url(#{$img}/phone.svg) no-repeat left center / 14px auto;
+        padding: 0 0 0 18px;
+        display: flex;
+        align-items: center;
+        margin: 20px 0
+    }
+    &_phone-button {
+        @include button-reset;
+        color: $cRed;
+        font-size: 10px;
+        text-decoration: underline;
+        vertical-align: middle;
+        margin: 0 0 0 8px;
+    }
+    &_phone-end {
+        display: none;
+        margin: 0 0 0 4px;
+    }
+    &_unavailable-icon {
+        margin: auto 8px;
+    }
+    &_unavailable-title {
+        font-weight: 700;
+        font-size: 12px;
+        text-align: center;
+        color: $cGrey;
+    }
+}

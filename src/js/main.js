@@ -423,3 +423,14 @@ if (typeof lightGallery !== "undefined") {
         speed: 500,
     });
 }
+
+/* phone button */
+const phoneButtonElements = document.querySelectorAll('.shop-card_phone-button');
+phoneButtonElements.forEach(el => {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        e.target.style.display = 'none';
+        e.target.nextElementSibling.style.display = 'inline';
+    })
+});

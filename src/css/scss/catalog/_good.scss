@@ -9,19 +9,23 @@
     }
 
     &_header {
+        margin: 0 0 30px;
         @include tablet {
+            width: 100%;
             display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        @include desktop {
+            margin-bottom: 85px;
         }
     }
 
     &_gallery,
     &_data {
-        margin: 0 0 30px;
         @include tablet {
             flex-grow: 1;
-        }
-        @include desktop {
-            margin-bottom: 150px;
         }
     }
     &_gallery {
@@ -94,13 +98,39 @@
         flex-grow: 1;
     }
     &_characteristics-sidebar {
-        @include tablet {
+        display: none;
+        @include desktop {
+            display: block;
             max-width: 315px;
         }
     }
     &_shops {
+        overflow-x: auto;
+        width: 100%;
         @include tablet {
+            overflow-x: visible;
+        }
+        @include desktop {
             width: 33%;
+            overflow-y: auto;
+            padding: 20px;
+            margin-top: -20px;
+            height: 436px;
+        }
+    }
+    &_shops-list {
+        display: flex;
+        gap: $indent;
+        width: 100%;
+        @include tablet {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+            width: auto;
+        }
+        @include desktop {
+            display: block;
         }
     }
 }
