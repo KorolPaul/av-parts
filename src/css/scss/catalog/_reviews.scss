@@ -1,0 +1,139 @@
+.reviews {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    &_list,
+    &_form {
+        box-sizing: border-box;
+        @include tablet {
+            flex-grow: 1;
+            width: 50%;
+        }
+    }
+
+    &_list {
+        max-height: 575px;
+        overflow: auto;
+    }
+
+    &_form {
+        background-color: $cLight;
+        padding: 16px;
+        text-align: center;
+        @include tablet {
+            padding: 32px;
+        }
+
+        textarea {
+            @include tablet {
+                min-height: 282px;
+            }
+        }
+    }
+
+    &_form-rating {
+        font-size: 16px;
+        line-height: 18px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 20px;
+    }
+    &_form-stars {
+        display: flex;
+        line-height: 1;
+    }
+    &_form-star {
+        width: 40px;
+        height: 40px;
+        background: url(#{$img}/star.svg) no-repeat center / contain;
+        margin: 0 2px;
+        opacity: .5;
+        transition: .2s ease opacity;
+
+        &.active,
+        &:hover {
+            opacity: 1;
+            background-image: url(#{$img}/star-yellow.svg);
+        }
+    }
+}
+
+.review {
+    padding: 20px 18px;
+    background-color: $cLight;
+    @include tablet {
+        margin-bottom: 20px;
+        padding-bottom: 6px;
+    }
+
+    &_header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #E5E5E5;
+        padding: 5px 0 20px;
+    }
+    &_name {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+        display: block;
+        @include tablet {
+            margin: 0 30px 0 0;
+            display: inline-block;
+        }
+    }
+    &_date {
+        font-size: 14px;
+        line-height: 1.2;
+        color: #7D7B7B;
+        background: url(#{$img}/calendar.svg) no-repeat left 1px / 13px;
+        padding-left: 20px;
+    }
+    &_content {
+        background: url(#{$img}/quote.svg) no-repeat right bottom / 40px auto;
+        padding: 16px 0 12px;
+        font-size: 12px;
+        @include tablet {
+            padding: 20px 58px 0 0;
+            background-position: right 20px;
+            font-size: 14px;
+        }
+    }
+    &_rating {
+        font-size: 14px;
+        color: #7D7B7B;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        @include tablet {
+            display: inline-flex;
+        }
+    }
+    &_stars {
+        display: flex;
+        line-height: 1;
+    }
+    &_star {
+        width: 14px;
+        height: 13px;
+        background: url(#{$img}/star.svg) no-repeat center / contain;
+        margin: 0 2px;
+        opacity: .5;
+        transition: .2s ease opacity;
+
+        &.active,
+        &:hover {
+            opacity: 1;
+            background-image: url(#{$img}/star-yellow.svg);
+        }
+    }
+}

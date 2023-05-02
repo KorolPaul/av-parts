@@ -4,6 +4,10 @@
             display: flex;
             gap: 30px;
         }
+
+        &__center {
+            justify-content: center;
+        }
     }
     &_cell {
         margin: 0 0 20px;
@@ -28,6 +32,7 @@
         color: $cRed;
         font-size: 15px;
         border: 1px solid $cRed;
+        white-space: nowrap;
         @include tablet {
             font-size: 18px;
         }

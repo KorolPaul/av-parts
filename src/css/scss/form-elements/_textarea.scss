@@ -1,7 +1,7 @@
 textarea {
     @include placeholder-color($color);
     color: $color;
-    background: transparent;
+    background: #fff;
     border: none;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
